@@ -183,34 +183,6 @@
             50% { transform: translateY(15px); }  
         }
 
-        /* Minecraft House CSS Art in Hero */  
-        .hero-house {  
-            position: absolute;  
-            bottom: 35%;  
-            left: 50%;  
-            transform: translateX(-50%);  
-            z-index: 5;  
-        }
-
-        .house-block {  
-            display: grid;  
-            grid-template-columns: repeat(7, 20px);  
-            grid-template-rows: repeat(7, 20px);  
-        }
-
-        .house-block div {  
-            width: 20px;  
-            height: 20px;  
-            border: 1px solid rgba(0,0,0,0.1);  
-        }
-
-        .b-wood { background-color: var(--wood-brown); }  
-        .b-plank { background-color: #D2A060; }  
-        .b-glass { background-color: rgba(173, 216, 230, 0.7); border: 1px solid #87CEEB; }  
-        .b-door { background-color: #654321; }  
-        .b-roof { background-color: #8B0000; }  
-        .b-empty { background: transparent; border: none; }
-
         /* Navigation */  
         nav {  
             position: sticky;  
@@ -242,7 +214,6 @@
             text-shadow: 1px 1px 0 #333;  
             transition: all 0.2s;  
             border-radius: 2px;  
-            image-rendering: pixelated;  
         }
 
         .nav-btn:hover {  
@@ -274,7 +245,6 @@
             border: 4px solid #222;  
             box-shadow: 0 4px 0 #111;  
             text-shadow: 2px 2px 0 #000;  
-            position: relative;  
         }
 
         .section-title .emoji {  
@@ -383,7 +353,6 @@
             border: 2px solid #009900;  
         }
 
-        /* Wood block pixel art */  
         .wood-pixel {  
             background: linear-gradient(135deg, var(--wood-brown) 25%, #8B4513 25%, #8B4513 50%, var(--wood-brown) 50%, var(--wood-brown) 75%, #8B4513 75%);  
             background-size: 16px 16px;  
@@ -402,7 +371,6 @@
 
         .door-pixel {  
             background: linear-gradient(180deg, #654321, #543210);  
-            position: relative;  
         }
 
         .torch-pixel {  
@@ -470,7 +438,6 @@
             text-shadow: 2px 2px 0 #000;  
             border: 4px solid #333;  
             z-index: 2;  
-            position: relative;  
         }
 
         .step:nth-child(odd) .step-number { background: var(--creeper-green); }  
@@ -574,16 +541,12 @@
             background: linear-gradient(90deg, var(--creeper-green), var(--diamond-blue), var(--gold-yellow));  
             width: 0%;  
             transition: width 1s ease;  
-            position: relative;  
         }
 
         .progress-bar::after {  
             content: '';  
             position: absolute;  
-            top: 0;  
-            left: 0;  
-            right: 0;  
-            bottom: 0;  
+            top: 0; left: 0; right: 0; bottom: 0;  
             background: repeating-linear-gradient(90deg, transparent 0px, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px);  
         }
 
@@ -611,23 +574,10 @@
             user-select: none;  
         }
 
-        .checkbox-list li:hover {  
-            color: var(--gold-yellow);  
-        }
-
-        .checkbox-list li.checked {  
-            color: var(--creeper-green);  
-            text-decoration: line-through;  
-        }
-
-        .checkbox-list li::before {  
-            content: '☐ ';  
-            font-size: 1.2rem;  
-        }
-
-        .checkbox-list li.checked::before {  
-            content: '☑ ';  
-        }
+        .checkbox-list li:hover { color: var(--gold-yellow); }  
+        .checkbox-list li.checked { color: var(--creeper-green); text-decoration: line-through; }  
+        .checkbox-list li::before { content: '☐ '; font-size: 1.2rem; }  
+        .checkbox-list li.checked::before { content: '☑ '; }
 
         /* Tips Section */  
         #tips {  
@@ -653,9 +603,7 @@
         .tip-card::after {  
             content: '';  
             position: absolute;  
-            bottom: 0;  
-            left: 0;  
-            right: 0;  
+            bottom: 0; left: 0; right: 0;  
             height: 6px;  
         }
 
@@ -678,9 +626,7 @@
             animation: tip-wiggle 2s ease-in-out infinite;  
         }
 
-        .tip-card:nth-child(even) .tip-emoji {  
-            animation-delay: 0.5s;  
-        }
+        .tip-card:nth-child(even) .tip-emoji { animation-delay: 0.5s; }
 
         @keyframes tip-wiggle {  
             0%, 100% { transform: rotate(-5deg); }  
@@ -694,10 +640,7 @@
             margin-bottom: 10px;  
         }
 
-        .tip-card p {  
-            color: #555;  
-            line-height: 1.5;  
-        }
+        .tip-card p { color: #555; line-height: 1.5; }
 
         /* House Styles Gallery */  
         #styles {  
@@ -728,40 +671,14 @@
             display: flex;  
             align-items: center;  
             justify-content: center;  
-            position: relative;  
-            overflow: hidden;  
         }
 
-        .style-preview .pixel-house {  
-            display: grid;  
-            gap: 0;  
-            image-rendering: pixelated;  
-        }
+        .style-wooden .style-preview { background: linear-gradient(180deg, var(--sky-blue) 60%, var(--grass-green) 60%); }  
+        .style-castle .style-preview { background: linear-gradient(180deg, #2C3E50 60%, #555 60%); }  
+        .style-modern .style-preview { background: linear-gradient(180deg, #87CEEB 60%, #90EE90 60%); }  
+        .style-treehouse .style-preview { background: linear-gradient(180deg, var(--sky-blue) 40%, var(--grass-green) 80%); }
 
-        .style-preview .pixel-house div {  
-            width: 15px;  
-            height: 15px;  
-        }
-
-        .style-wooden .style-preview {  
-            background: linear-gradient(180deg, var(--sky-blue) 60%, var(--grass-green) 60%);  
-        }
-
-        .style-castle .style-preview {  
-            background: linear-gradient(180deg, #2C3E50 60%, #555 60%);  
-        }
-
-        .style-modern .style-preview {  
-            background: linear-gradient(180deg, #87CEEB 60%, #90EE90 60%);  
-        }
-
-        .style-treehouse .style-preview {  
-            background: linear-gradient(180deg, var(--sky-blue) 40%, var(--grass-green) 80%);  
-        }
-
-        .style-info {  
-            padding: 20px;  
-        }
+        .style-info { padding: 20px; }
 
         .style-info h3 {  
             font-family: 'Fredoka One', cursive;  
@@ -770,131 +687,382 @@
             margin-bottom: 5px;  
         }
 
-        .difficulty {  
+        .difficulty { display: flex; gap: 3px; margin-bottom: 10px; }  
+        .difficulty-block { width: 20px; height: 20px; border: 2px solid #333; }  
+        .difficulty-block.filled { background: var(--creeper-green); }  
+        .difficulty-block.empty { background: #ddd; }  
+        .style-info p { color: #555; font-size: 0.95rem; line-height: 1.5; }
+
+        /* ==================== DAILY JOKE SECTION ==================== */  
+        .joke-section {  
+            background: linear-gradient(135deg, var(--gold-yellow), #FFA500);  
+            padding: 50px 20px;  
+            text-align: center;  
+        }
+
+        .joke-section-title {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: clamp(0.8rem, 2.5vw, 1.3rem);  
+            margin-bottom: 25px;  
+            color: #333;  
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.3);  
+        }
+
+        .joke-main-container {  
+            max-width: 650px;  
+            margin: 0 auto;  
+        }
+
+        /* Daily Joke Date Banner */  
+        .joke-date-banner {  
+            background: linear-gradient(180deg, #333, #222);  
+            border: 3px solid var(--gold-yellow);  
+            padding: 12px 20px;  
+            margin-bottom: 0;  
             display: flex;  
-            gap: 3px;  
+            justify-content: space-between;  
+            align-items: center;  
+            flex-wrap: wrap;  
+            gap: 10px;  
+        }
+
+        .joke-date-text {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.6rem;  
+            color: var(--gold-yellow);  
+        }
+
+        .joke-streak {  
+            display: flex;  
+            align-items: center;  
+            gap: 8px;  
+        }
+
+        .streak-badge {  
+            background: linear-gradient(135deg, #FF6B35, #FF4500);  
+            border: 2px solid #FFD700;  
+            padding: 4px 10px;  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.55rem;  
+            color: white;  
+            display: flex;  
+            align-items: center;  
+            gap: 5px;  
+            animation: streak-glow 2s ease-in-out infinite;  
+        }
+
+        @keyframes streak-glow {  
+            0%, 100% { box-shadow: 0 0 5px rgba(255,69,0,0.3); }  
+            50% { box-shadow: 0 0 15px rgba(255,69,0,0.6); }  
+        }
+
+        /* Main Joke Card */  
+        .joke-card {  
+            background: white;  
+            border: 5px solid #333;  
+            border-top: none;  
+            padding: 0;  
+            cursor: pointer;  
+            transition: transform 0.3s;  
+            overflow: hidden;  
+        }
+
+        .joke-card:hover {  
+            transform: scale(1.01);  
+        }
+
+        .joke-card-inner {  
+            padding: 30px 25px;  
+        }
+
+        .joke-category-tag {  
+            display: inline-block;  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.5rem;  
+            padding: 5px 12px;  
+            border: 2px solid #333;  
+            margin-bottom: 20px;  
+            color: white;  
+            text-transform: uppercase;  
+        }
+
+        .joke-category-tag.cat-creeper { background: var(--creeper-green); }  
+        .joke-category-tag.cat-mob { background: #9B59B6; }  
+        .joke-category-tag.cat-building { background: var(--wood-brown); }  
+        .joke-category-tag.cat-mining { background: var(--stone-gray); }  
+        .joke-category-tag.cat-food { background: #E74C3C; }  
+        .joke-category-tag.cat-nether { background: #FF4500; }  
+        .joke-category-tag.cat-general { background: var(--diamond-blue); }  
+        .joke-category-tag.cat-animal { background: var(--grass-green); }  
+        .joke-category-tag.cat-redstone { background: #CC0000; }  
+        .joke-category-tag.cat-enchant { background: #8B00FF; }
+
+        .joke-emoji-display {  
+            font-size: 4rem;  
+            margin-bottom: 15px;  
+            display: block;  
+            animation: joke-float 3s ease-in-out infinite;  
+        }
+
+        @keyframes joke-float {  
+            0%, 100% { transform: translateY(0) rotate(-3deg); }  
+            50% { transform: translateY(-10px) rotate(3deg); }  
+        }
+
+        .joke-question {  
+            font-family: 'Fredoka One', cursive;  
+            font-size: 1.4rem;  
+            color: #333;  
+            margin-bottom: 20px;  
+            line-height: 1.4;  
+        }
+
+        .joke-reveal-area {  
+            position: relative;  
+            min-height: 80px;  
+        }
+
+        .joke-answer {  
+            font-family: 'Comic Neue', cursive;  
+            font-weight: 700;  
+            font-size: 1.3rem;  
+            color: var(--creeper-green);  
+            padding: 20px;  
+            background: #f8f8f8;  
+            border: 3px dashed #333;  
+            transition: all 0.5s;  
+            position: relative;  
+        }
+
+        .joke-answer.hidden {  
+            filter: blur(15px);  
+            user-select: none;  
+        }
+
+        .joke-answer.revealed {  
+            filter: blur(0);  
+        }
+
+        .joke-click-overlay {  
+            position: absolute;  
+            top: 0; left: 0; right: 0; bottom: 0;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            background: rgba(255,255,255,0.7);  
+            cursor: pointer;  
+            transition: opacity 0.3s;  
+            z-index: 2;  
+        }
+
+        .joke-click-overlay.gone {  
+            opacity: 0;  
+            pointer-events: none;  
+        }
+
+        .click-to-reveal {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.7rem;  
+            color: #333;  
+            background: var(--gold-yellow);  
+            padding: 10px 20px;  
+            border: 3px solid #333;  
+            animation: pulse-reveal 1.5s ease-in-out infinite;  
+        }
+
+        @keyframes pulse-reveal {  
+            0%, 100% { transform: scale(1); }  
+            50% { transform: scale(1.08); }  
+        }
+
+        /* Joke footer with countdown */  
+        .joke-footer {  
+            background: linear-gradient(180deg, #f0f0f0, #e0e0e0);  
+            border-top: 3px solid #333;  
+            padding: 15px 25px;  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            flex-wrap: wrap;  
+            gap: 10px;  
+        }
+
+        .joke-countdown {  
+            display: flex;  
+            align-items: center;  
+            gap: 8px;  
+        }
+
+        .countdown-label {  
+            font-family: 'Fredoka One', cursive;  
+            font-size: 0.85rem;  
+            color: #555;  
+        }
+
+        .countdown-timer {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.65rem;  
+            background: #333;  
+            color: var(--creeper-green);  
+            padding: 6px 12px;  
+            border: 2px solid #555;  
+        }
+
+        .joke-share-btns {  
+            display: flex;  
+            gap: 5px;  
+        }
+
+        .joke-share-btn {  
+            width: 35px;  
+            height: 35px;  
+            border: 2px solid #333;  
+            background: white;  
+            cursor: pointer;  
+            font-size: 1.1rem;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            transition: all 0.2s;  
+        }
+
+        .joke-share-btn:hover {  
+            transform: scale(1.15);  
+            background: var(--gold-yellow);  
+        }
+
+        /* Joke History */  
+        .joke-history {  
+            margin-top: 25px;  
+            background: white;  
+            border: 5px solid #333;  
+            overflow: hidden;  
+        }
+
+        .joke-history-header {  
+            background: linear-gradient(180deg, #555, #333);  
+            padding: 12px 20px;  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            cursor: pointer;  
+            transition: background 0.3s;  
+        }
+
+        .joke-history-header:hover {  
+            background: linear-gradient(180deg, #666, #444);  
+        }
+
+        .joke-history-title {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.65rem;  
+            color: var(--gold-yellow);  
+        }
+
+        .joke-history-toggle {  
+            font-size: 1.2rem;  
+            color: white;  
+            transition: transform 0.3s;  
+        }
+
+        .joke-history-toggle.open {  
+            transform: rotate(180deg);  
+        }
+
+        .joke-history-list {  
+            max-height: 0;  
+            overflow: hidden;  
+            transition: max-height 0.5s ease;  
+        }
+
+        .joke-history-list.open {  
+            max-height: 800px;  
+            overflow-y: auto;  
+        }
+
+        .history-item {  
+            padding: 12px 20px;  
+            border-bottom: 2px solid #eee;  
+            display: flex;  
+            gap: 12px;  
+            align-items: flex-start;  
+            transition: background 0.2s;  
+        }
+
+        .history-item:hover {  
+            background: #f8f8f8;  
+        }
+
+        .history-date {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.5rem;  
+            color: #888;  
+            white-space: nowrap;  
+            padding-top: 3px;  
+            min-width: 60px;  
+        }
+
+        .history-joke {  
+            font-family: 'Fredoka One', cursive;  
+            font-size: 0.9rem;  
+            color: #333;  
+        }
+
+        .history-joke span {  
+            color: var(--creeper-green);  
+            font-family: 'Comic Neue', cursive;  
+            font-weight: 700;  
+        }
+
+        /* Joke Rating */  
+        .joke-rating {  
+            margin-top: 15px;  
+            padding: 15px 25px;  
+            background: white;  
+            border: 5px solid #333;  
+            text-align: center;  
+        }
+
+        .rating-label {  
+            font-family: 'Fredoka One', cursive;  
+            color: #333;  
+            font-size: 1rem;  
             margin-bottom: 10px;  
         }
 
-        .difficulty-block {  
-            width: 20px;  
-            height: 20px;  
-            border: 2px solid #333;  
-        }
-
-        .difficulty-block.filled { background: var(--creeper-green); }  
-        .difficulty-block.empty { background: #ddd; }
-
-        .style-info p {  
-            color: #555;  
-            font-size: 0.95rem;  
-            line-height: 1.5;  
-        }
-
-        /* Quiz Section */  
-        #quiz {  
-            background: linear-gradient(180deg, #87CEEB, #B0E0FF);  
-        }
-
-        .quiz-container {  
-            max-width: 600px;  
-            margin: 0 auto;  
-            background: white;  
-            border: 5px solid #333;  
-            padding: 30px;  
-            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);  
-        }
-
-        .quiz-question {  
-            font-family: 'Fredoka One', cursive;  
-            font-size: 1.3rem;  
-            color: #333;  
-            margin-bottom: 20px;  
-            text-align: center;  
-        }
-
-        .quiz-options {  
-            display: grid;  
-            gap: 10px;  
-        }
-
-        .quiz-option {  
-            font-family: 'Comic Neue', cursive;  
-            font-weight: 700;  
-            font-size: 1rem;  
-            padding: 15px 20px;  
-            border: 3px solid #333;  
-            background: #f0f0f0;  
-            cursor: pointer;  
-            transition: all 0.2s;  
-            text-align: left;  
-        }
-
-        .quiz-option:hover {  
-            background: var(--diamond-blue);  
-            color: white;  
-            transform: translateX(5px);  
-        }
-
-        .quiz-option.correct {  
-            background: var(--creeper-green) !important;  
-            color: white;  
-            border-color: #009900;  
-        }
-
-        .quiz-option.wrong {  
-            background: #FF4444 !important;  
-            color: white;  
-            border-color: #CC0000;  
-            animation: shake 0.5s;  
-        }
-
-        @keyframes shake {  
-            0%, 100% { transform: translateX(0); }  
-            25% { transform: translateX(-10px); }  
-            75% { transform: translateX(10px); }  
-        }
-
-        .quiz-result {  
-            text-align: center;  
-            margin-top: 20px;  
-            font-family: 'Press Start 2P', monospace;  
-            font-size: 0.8rem;  
-            padding: 15px;  
-            display: none;  
-        }
-
-        .quiz-nav {  
+        .rating-faces {  
             display: flex;  
             justify-content: center;  
             gap: 10px;  
-            margin-top: 20px;  
         }
 
-        .quiz-btn {  
-            font-family: 'Press Start 2P', monospace;  
-            font-size: 0.65rem;  
-            padding: 12px 20px;  
-            border: 3px solid #333;  
+        .rate-btn {  
+            font-size: 2.2rem;  
             cursor: pointer;  
             transition: all 0.2s;  
-            color: white;  
+            background: none;  
+            border: 3px solid transparent;  
+            padding: 5px;  
+            border-radius: 50%;  
         }
 
-        .quiz-btn:hover {  
-            transform: translateY(-3px);  
-            box-shadow: 0 4px 0 #333;  
+        .rate-btn:hover {  
+            transform: scale(1.3);  
+            border-color: var(--gold-yellow);  
         }
 
-        .quiz-btn.next-btn { background: var(--creeper-green); }  
-        .quiz-btn.reset-btn { background: var(--lava-orange); }
+        .rate-btn.selected {  
+            transform: scale(1.3);  
+            border-color: var(--gold-yellow);  
+            background: #FFF3CD;  
+        }
 
-        .quiz-score {  
+        .rating-result {  
             font-family: 'Press Start 2P', monospace;  
-            text-align: center;  
-            color: #333;  
-            font-size: 0.8rem;  
-            margin-bottom: 15px;  
+            font-size: 0.6rem;  
+            color: var(--creeper-green);  
+            margin-top: 10px;  
+            min-height: 20px;  
         }
 
         /* Creeper Warning */  
@@ -905,8 +1073,6 @@
             margin: 40px auto;  
             max-width: 800px;  
             text-align: center;  
-            position: relative;  
-            overflow: hidden;  
             animation: creeper-glow 2s ease-in-out infinite;  
         }
 
@@ -915,11 +1081,7 @@
             50% { box-shadow: 0 0 30px var(--creeper-green), 0 0 60px rgba(0, 204, 0, 0.3); }  
         }
 
-        .creeper-face {  
-            font-size: 4rem;  
-            margin-bottom: 15px;  
-            display: block;  
-        }
+        .creeper-face { font-size: 4rem; margin-bottom: 15px; display: block; }
 
         .creeper-warning h3 {  
             font-family: 'Press Start 2P', monospace;  
@@ -929,11 +1091,7 @@
             text-shadow: 0 0 10px var(--creeper-green);  
         }
 
-        .creeper-warning p {  
-            color: #ccc;  
-            font-size: 1rem;  
-            line-height: 1.8;  
-        }
+        .creeper-warning p { color: #ccc; font-size: 1rem; line-height: 1.8; }
 
         .creeper-warning ul {  
             list-style: none;  
@@ -943,14 +1101,8 @@
             margin: 15px auto;  
         }
 
-        .creeper-warning ul li {  
-            padding: 5px 0;  
-            font-size: 1rem;  
-        }
-
-        .creeper-warning ul li::before {  
-            content: '💥 ';  
-        }
+        .creeper-warning ul li { padding: 5px 0; font-size: 1rem; }  
+        .creeper-warning ul li::before { content: '💥 '; }
 
         /* Interactive Builder */  
         #builder {  
@@ -980,13 +1132,9 @@
             border: 3px solid #555;  
             cursor: pointer;  
             transition: all 0.2s;  
-            position: relative;  
         }
 
-        .palette-block:hover {  
-            transform: scale(1.2);  
-            z-index: 2;  
-        }
+        .palette-block:hover { transform: scale(1.2); z-index: 2; }
 
         .palette-block.selected {  
             border-color: var(--gold-yellow);  
@@ -1016,10 +1164,7 @@
             transition: background-color 0.1s;  
         }
 
-        .grid-cell:hover {  
-            outline: 2px solid var(--gold-yellow);  
-            z-index: 1;  
-        }
+        .grid-cell:hover { outline: 2px solid var(--gold-yellow); z-index: 1; }
 
         .builder-controls {  
             display: flex;  
@@ -1038,14 +1183,82 @@
             transition: all 0.2s;  
         }
 
-        .builder-btn:hover {  
-            transform: translateY(-2px);  
-            box-shadow: 0 3px 0 #333;  
-        }
-
+        .builder-btn:hover { transform: translateY(-2px); box-shadow: 0 3px 0 #333; }  
         .builder-btn.clear { background: var(--lava-orange); }  
         .builder-btn.save { background: var(--creeper-green); }  
         .builder-btn.template { background: var(--diamond-blue); }
+
+        /* Quiz Section */  
+        #quiz {  
+            background: linear-gradient(180deg, #87CEEB, #B0E0FF);  
+        }
+
+        .quiz-container {  
+            max-width: 600px;  
+            margin: 0 auto;  
+            background: white;  
+            border: 5px solid #333;  
+            padding: 30px;  
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);  
+        }
+
+        .quiz-question {  
+            font-family: 'Fredoka One', cursive;  
+            font-size: 1.3rem;  
+            color: #333;  
+            margin-bottom: 20px;  
+            text-align: center;  
+        }
+
+        .quiz-options { display: grid; gap: 10px; }
+
+        .quiz-option {  
+            font-family: 'Comic Neue', cursive;  
+            font-weight: 700;  
+            font-size: 1rem;  
+            padding: 15px 20px;  
+            border: 3px solid #333;  
+            background: #f0f0f0;  
+            cursor: pointer;  
+            transition: all 0.2s;  
+            text-align: left;  
+        }
+
+        .quiz-option:hover { background: var(--diamond-blue); color: white; transform: translateX(5px); }  
+        .quiz-option.correct { background: var(--creeper-green) !important; color: white; border-color: #009900; }  
+        .quiz-option.wrong { background: #FF4444 !important; color: white; border-color: #CC0000; animation: shake 0.5s; }
+
+        @keyframes shake {  
+            0%, 100% { transform: translateX(0); }  
+            25% { transform: translateX(-10px); }  
+            75% { transform: translateX(10px); }  
+        }
+
+        .quiz-result {  
+            text-align: center;  
+            margin-top: 20px;  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.8rem;  
+            padding: 15px;  
+            display: none;  
+        }
+
+        .quiz-nav { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+
+        .quiz-btn {  
+            font-family: 'Press Start 2P', monospace;  
+            font-size: 0.65rem;  
+            padding: 12px 20px;  
+            border: 3px solid #333;  
+            cursor: pointer;  
+            transition: all 0.2s;  
+            color: white;  
+        }
+
+        .quiz-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 0 #333; }  
+        .quiz-btn.next-btn { background: var(--creeper-green); }  
+        .quiz-btn.reset-btn { background: var(--lava-orange); }  
+        .quiz-score { font-family: 'Press Start 2P', monospace; text-align: center; color: #333; font-size: 0.8rem; margin-bottom: 15px; }
 
         /* Fun Counter */  
         .fun-counter {  
@@ -1063,9 +1276,7 @@
             margin: 0 auto;  
         }
 
-        .counter-item {  
-            text-align: center;  
-        }
+        .counter-item { text-align: center; }
 
         .counter-number {  
             font-family: 'Press Start 2P', monospace;  
@@ -1081,63 +1292,11 @@
             margin-top: 5px;  
         }
 
-        /* Joke Section */  
-        .joke-section {  
-            background: linear-gradient(135deg, var(--gold-yellow), #FFA500);  
-            padding: 40px 20px;  
-            text-align: center;  
-        }
-
-        .joke-card {  
-            max-width: 600px;  
-            margin: 0 auto;  
-            background: white;  
-            border: 5px solid #333;  
-            padding: 30px;  
-            cursor: pointer;  
-            transition: transform 0.3s;  
-        }
-
-        .joke-card:hover {  
-            transform: rotate(-1deg) scale(1.02);  
-        }
-
-        .joke-question {  
-            font-family: 'Fredoka One', cursive;  
-            font-size: 1.4rem;  
-            color: #333;  
-            margin-bottom: 15px;  
-        }
-
-        .joke-answer {  
-            font-family: 'Comic Neue', cursive;  
-            font-weight: 700;  
-            font-size: 1.2rem;  
-            color: var(--creeper-green);  
-            opacity: 0;  
-            transition: opacity 0.5s;  
-            padding: 15px;  
-            background: #f0f0f0;  
-            border: 3px dashed #333;  
-        }
-
-        .joke-answer.revealed {  
-            opacity: 1;  
-        }
-
-        .joke-hint {  
-            font-size: 0.8rem;  
-            color: #888;  
-            margin-top: 10px;  
-            font-style: italic;  
-        }
-
         /* Footer */  
         footer {  
             background: linear-gradient(180deg, var(--grass-green) 0%, var(--grass-green) 15%, var(--dirt-brown) 15%, var(--dirt-brown) 50%, #666 50%, #666 70%, #555 70%, #555 85%, #444 85%);  
             padding: 60px 20px 30px;  
             text-align: center;  
-            position: relative;  
         }
 
         footer::before {  
@@ -1157,12 +1316,7 @@
             margin-bottom: 10px;  
         }
 
-        .footer-blocks {  
-            display: flex;  
-            justify-content: center;  
-            gap: 5px;  
-            margin-top: 20px;  
-        }
+        .footer-blocks { display: flex; justify-content: center; gap: 5px; margin-top: 20px; }
 
         .footer-block {  
             width: 20px;  
@@ -1183,41 +1337,6 @@
             50% { transform: translateY(-10px); }  
         }
 
-        /* Responsive */  
-        @media (max-width: 768px) {  
-            .step-line { display: none; }  
-              
-            .step {  
-                flex-direction: column;  
-                align-items: center;  
-                text-align: center;  
-            }
-
-            .step-content::before { display: none; }
-
-            .build-grid {  
-                grid-template-columns: repeat(10, 25px);  
-                grid-template-rows: repeat(8, 25px);  
-            }
-
-            .grid-cell {  
-                width: 25px;  
-                height: 25px;  
-            }  
-        }
-
-        @media (max-width: 480px) {  
-            .build-grid {  
-                grid-template-columns: repeat(8, 22px);  
-                grid-template-rows: repeat(6, 22px);  
-            }
-
-            .grid-cell {  
-                width: 22px;  
-                height: 22px;  
-            }  
-        }
-
         /* Achievement popup */  
         .achievement {  
             position: fixed;  
@@ -1236,13 +1355,8 @@
             min-width: 300px;  
         }
 
-        .achievement.show {  
-            top: 20px;  
-        }
-
-        .achievement-icon {  
-            font-size: 2rem;  
-        }
+        .achievement.show { top: 20px; }  
+        .achievement-icon { font-size: 2rem; }
 
         .achievement-text h4 {  
             font-family: 'Press Start 2P', monospace;  
@@ -1277,16 +1391,9 @@
             box-shadow: 3px 3px 0 #333;  
         }
 
-        .scroll-top:hover {  
-            background: #009900;  
-            transform: translateY(-3px);  
-        }
+        .scroll-top:hover { background: #009900; transform: translateY(-3px); }  
+        .scroll-top.visible { display: flex; }
 
-        .scroll-top.visible {  
-            display: flex;  
-        }
-
-        /* Block animation on click */  
         .block-pop {  
             position: fixed;  
             pointer-events: none;  
@@ -1318,13 +1425,9 @@
             transition: all 0.3s;  
         }
 
-        .day-night-toggle:hover {  
-            transform: rotate(20deg);  
-        }
+        .day-night-toggle:hover { transform: rotate(20deg); }
 
-        body.night-mode {  
-            --sky-blue: #1a1a3e;  
-        }
+        body.night-mode { --sky-blue: #1a1a3e; }
 
         body.night-mode .hero {  
             background: linear-gradient(180deg, #0a0a2e 0%, #1a1a3e 40%, #1a1a3e 60%, #2d4a00 60%, #2d4a00 65%, #4a3000 65%, #4a3000 80%, #333 80%, #333 100%);  
@@ -1338,15 +1441,6 @@
             box-shadow: 0 0 30px 10px rgba(255, 255, 204, 0.3);  
         }
 
-        body.night-mode section:nth-child(odd) {  
-            background: linear-gradient(180deg, #1a1a3e, #16213e);  
-        }
-
-        body.night-mode section:nth-child(even) {  
-            background: linear-gradient(180deg, #16213e, #1a1a3e);  
-        }
-
-        /* Animated Emoji Rain */  
         .emoji-rain {  
             position: fixed;  
             font-size: 1.5rem;  
@@ -1358,15 +1452,29 @@
         @keyframes rain-fall {  
             0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }  
             100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }  
+        }
+
+        /* Responsive */  
+        @media (max-width: 768px) {  
+            .step-line { display: none; }  
+            .step { flex-direction: column; align-items: center; text-align: center; }  
+            .step-content::before { display: none; }  
+            .build-grid { grid-template-columns: repeat(10, 25px); grid-template-rows: repeat(8, 25px); }  
+            .grid-cell { width: 25px; height: 25px; }  
+            .joke-date-banner { justify-content: center; text-align: center; }  
+            .joke-footer { justify-content: center; }  
+        }
+
+        @media (max-width: 480px) {  
+            .build-grid { grid-template-columns: repeat(8, 22px); grid-template-rows: repeat(6, 22px); }  
+            .grid-cell { width: 22px; height: 22px; }  
         }  
     </style>  
 </head>  
 <body>
 
-    <!-- Day/Night Toggle -->  
     <button class="day-night-toggle" onclick="toggleDayNight()" title="Toggle Day/Night">☀️</button>
 
-    <!-- Achievement Popup -->  
     <div class="achievement" id="achievement">  
         <span class="achievement-icon">🏆</span>  
         <div class="achievement-text">  
@@ -1375,10 +1483,7 @@
         </div>  
     </div>
 
-    <!-- Floating Particles -->  
-    <div class="particles-container" id="particles"></div>
-
-    <!-- Scroll to Top -->  
+    <div class="particles-container" id="particles"></div>  
     <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">⬆</button>
 
     <!-- Hero Section -->  
@@ -1388,16 +1493,13 @@
             <div class="cloud cloud-2"></div>  
             <div class="cloud cloud-3"></div>  
         </div>  
-          
         <div class="title-container">  
             <h1 class="main-title">  
                 ⛏️ MINECRAFT ⛏️  
                 <span class="highlight">🏠 MASTER BUILDER GUIDE 🏠</span>  
             </h1>  
         </div>  
-          
         <p class="subtitle">Learn How to Build the COOLEST House Ever! 🎮✨</p>  
-          
         <div class="scroll-hint">⬇️ Scroll Down to Start Building! ⬇️</div>  
     </section>
 
@@ -1426,6 +1528,7 @@
             <a href="#steps" class="nav-btn">🔨 Steps</a>  
             <a href="#tips" class="nav-btn">💡 Tips</a>  
             <a href="#styles" class="nav-btn">🏰 Styles</a>  
+            <a href="#daily-joke" class="nav-btn">😂 Daily Joke</a>  
             <a href="#builder" class="nav-btn">🎨 Builder</a>  
             <a href="#quiz" class="nav-btn">🧠 Quiz</a>  
         </div>  
@@ -1436,47 +1539,40 @@
         <div class="section-title">  
             <span class="emoji">📦</span> MATERIALS YOU NEED <span class="emoji">📦</span>  
         </div>  
-          
         <p style="text-align: center; font-size: 1.2rem; margin-bottom: 30px; color: #333; font-family: 'Fredoka One', cursive;">  
             Before you build, you gotta GATHER! Here's what you need to collect: 🎒  
-        </p>
-
+        </p>  
         <div class="materials-grid">  
             <div class="material-card" onclick="blockClick(event, '🪵')">  
                 <div class="material-icon wood-pixel"></div>  
                 <h3>🪵 Wood Planks</h3>  
                 <p>The bread and butter of building! Punch those trees! 🌳👊</p>  
                 <span class="quantity">x64 blocks</span>  
-            </div>
-
+            </div>  
             <div class="material-card" onclick="blockClick(event, '🪟')">  
                 <div class="material-icon glass-pixel"></div>  
                 <h3>🪟 Glass Blocks</h3>  
                 <p>Smelt sand in a furnace for see-through awesomeness! 👀</p>  
                 <span class="quantity">x16 blocks</span>  
-            </div>
-
+            </div>  
             <div class="material-card" onclick="blockClick(event, '🪨')">  
                 <div class="material-icon stone-pixel"></div>  
                 <h3>🪨 Cobblestone</h3>  
                 <p>Super strong! Mine it underground with a pickaxe! 💪</p>  
                 <span class="quantity">x32 blocks</span>  
-            </div>
-
+            </div>  
             <div class="material-card" onclick="blockClick(event, '🚪')">  
                 <div class="material-icon door-pixel"></div>  
                 <h3>🚪 Wooden Door</h3>  
                 <p>Keep those zombies OUT! Craft with 6 wood planks! 🧟‍♂️🚫</p>  
                 <span class="quantity">x1 door</span>  
-            </div>
-
+            </div>  
             <div class="material-card" onclick="blockClick(event, '🔥')">  
                 <div class="material-icon torch-pixel"></div>  
                 <h3>🔥 Torches</h3>  
                 <p>Light it up! Monsters HATE light! Coal + stick = torch! 💡</p>  
                 <span class="quantity">x12 torches</span>  
-            </div>
-
+            </div>  
             <div class="material-card" onclick="blockClick(event, '🟫')">  
                 <div class="material-icon dirt-pixel"></div>  
                 <h3>🌱 Grass/Dirt</h3>  
@@ -1490,20 +1586,17 @@
     <section id="steps">  
         <div class="section-title">  
             <span class="emoji">🔨</span> BUILD YOUR HOUSE - STEP BY STEP <span class="emoji">🔨</span>  
-        </div>
-
+        </div>  
         <div class="step-container">  
-            <div class="step-line"></div>
-
+            <div class="step-line"></div>  
             <div class="step">  
                 <div class="step-number">1</div>  
                 <div class="step-content">  
                     <h3>🗺️ Pick the PERFECT Spot!</h3>  
-                    <p>Find a nice flat area near water if you can! Mountains look cool too, but flat ground = easier building. Look for a spot with a good view! 🏔️</p>  
+                    <p>Find a nice flat area near water if you can! Mountains look cool too, but flat ground = easier building. 🏔️</p>  
                     <div class="pro-tip">Build near a village and you'll have NPC neighbors! They trade cool stuff! 🤝</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">2</div>  
                 <div class="step-content">  
@@ -1511,89 +1604,79 @@
                     <p>Use cobblestone or wood planks to make a square floor. Count 10 blocks across and 10 blocks forward. BOOM - that's your floor! 🎯</p>  
                     <div class="pro-tip">Use different colored blocks for the border to make it look extra fancy! 🎨</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">3</div>  
                 <div class="step-content">  
                     <h3>🧱 Build the Walls UP!</h3>  
-                    <p>Stack blocks 4-5 blocks high on all four edges of your floor. Leave spaces for your door and windows! Don't close it all up! 🏗️</p>  
+                    <p>Stack blocks 4-5 blocks high on all four edges of your floor. Leave spaces for your door and windows! 🏗️</p>  
                     <div class="warning">If it gets dark while building, place torches IMMEDIATELY! Monsters spawn in the dark! 😱</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">4</div>  
                 <div class="step-content">  
                     <h3>🚪 Add Your Door!</h3>  
-                    <p>Pick a wall and leave a 1-wide, 2-tall gap. Place your wooden door in it! Now you can get in and out but mobs can't! (Well, most mobs... 😅)</p>  
+                    <p>Pick a wall and leave a 1-wide, 2-tall gap. Place your wooden door in it! Now you can get in and out but mobs can't! 😅</p>  
                     <div class="pro-tip">Put your door on the south side so sunlight comes in during the day! ☀️</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">5</div>  
                 <div class="step-content">  
                     <h3>🪟 Windows = More Cool!</h3>  
-                    <p>Knock out some wall blocks and replace them with glass! Make them 2 blocks wide for big windows. You can see outside AND mobs can't get in through glass! 👀</p>  
-                    <div class="pro-tip">Glass panes look even better than glass blocks and they're thinner! Use 6 glass blocks to make 16 panes! 🤯</div>  
+                    <p>Knock out some wall blocks and replace them with glass! Make them 2 blocks wide for big windows. 👀</p>  
+                    <div class="pro-tip">Glass panes look even better than glass blocks and they're thinner! 🤯</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">6</div>  
                 <div class="step-content">  
                     <h3>🏠 Add a Roof!</h3>  
-                    <p>Cover the top! You can make a flat roof (easy!) or a pointy triangle roof (fancy!). For a pointy roof, make stairs going up on two sides! ⛰️</p>  
-                    <div class="pro-tip">Use stair blocks for the roof - they look like real shingles! Wood stairs or stone brick stairs work great! 🪜</div>  
+                    <p>Cover the top! You can make a flat roof (easy!) or a pointy triangle roof (fancy!). ⛰️</p>  
+                    <div class="pro-tip">Use stair blocks for the roof - they look like real shingles! 🪜</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">7</div>  
                 <div class="step-content">  
                     <h3>💡 Light It Up Inside!</h3>  
-                    <p>Place torches on the walls and floor inside your house. Put them every 5-6 blocks so there are NO dark corners. Dark corners = monster parties! 🎉👾</p>  
-                    <div class="warning">If you don't light up your house, zombies and skeletons can spawn INSIDE! Nobody wants a skeleton roommate! 💀</div>  
+                    <p>Place torches on the walls and floor. Put them every 5-6 blocks so there are NO dark corners. 🎉👾</p>  
+                    <div class="warning">If you don't light up your house, zombies and skeletons can spawn INSIDE! 💀</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">8</div>  
                 <div class="step-content">  
                     <h3>🛏️ Furniture Time!</h3>  
-                    <p>Add a bed (3 wool + 3 wood), a crafting table, a furnace, and a chest! Put your bed in a corner - that sets your spawn point! 🏠</p>  
-                    <div class="pro-tip">Add a flower pot with a flower for decoration! Item frames on walls can hold your best items as trophies! 🌸🖼️</div>  
+                    <p>Add a bed, a crafting table, a furnace, and a chest! Put your bed in a corner - that sets your spawn point! 🏠</p>  
+                    <div class="pro-tip">Add a flower pot with a flower for decoration! Item frames on walls can hold your best items! 🌸🖼️</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">9</div>  
                 <div class="step-content">  
                     <h3>🌸 Decorate Outside!</h3>  
-                    <p>Add a garden with flowers, a path using gravel or stone, and maybe a fence around your yard! Fences keep animals in too! 🐄🌻</p>  
+                    <p>Add a garden with flowers, a path, and maybe a fence around your yard! 🐄🌻</p>  
                     <div class="pro-tip">Plant a tree next to your house for shade and an emergency wood supply! 🌳</div>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="step">  
                 <div class="step-number">🌟</div>  
                 <div class="step-content">  
                     <h3>🎉 CELEBRATE! Your House is DONE!</h3>  
-                    <p>WOOHOOO! You did it! You're now an official Minecraft architect! Take a screenshot and show your friends! Now go explore from your awesome new base! 🚀🎮</p>  
-                    <div class="pro-tip">Name your house! Write it on a sign and place it outside the door! Every great house deserves a name! 📝</div>  
+                    <p>WOOHOOO! You did it! You're now an official Minecraft architect! 🚀🎮</p>  
+                    <div class="pro-tip">Name your house! Write it on a sign and place it outside the door! 📝</div>  
                 </div>  
             </div>  
         </div>
 
-        <!-- Progress Tracker -->  
         <div class="progress-section">  
             <div class="progress-title">📋 YOUR BUILDING CHECKLIST 📋</div>  
             <div class="progress-bar-container">  
                 <div class="progress-bar" id="progressBar"></div>  
             </div>  
             <div class="progress-text" id="progressText">0 / 9 steps completed!</div>  
-              
             <ul class="checkbox-list" id="checklist">  
                 <li onclick="toggleCheck(this)">Found a building spot</li>  
                 <li onclick="toggleCheck(this)">Built the floor</li>  
@@ -1626,43 +1709,37 @@
     <section id="tips">  
         <div class="section-title">  
             <span class="emoji">💡</span> SUPER SECRET BUILDING TIPS <span class="emoji">💡</span>  
-        </div>
-
+        </div>  
         <div class="tips-grid">  
             <div class="tip-card" onclick="blockClick(event, '🎨')">  
                 <span class="tip-emoji">🎨</span>  
                 <h3>Mix Your Blocks!</h3>  
-                <p>Don't use just ONE type of block! Mix wood with stone, add some colored wool. Variety makes your house look AMAZING! 🌈</p>  
-            </div>
-
+                <p>Don't use just ONE type of block! Mix wood with stone, add some colored wool. Variety = AMAZING! 🌈</p>  
+            </div>  
             <div class="tip-card" onclick="blockClick(event, '📏')">  
                 <span class="tip-emoji">📏</span>  
                 <h3>Odd Numbers Rule!</h3>  
-                <p>Make walls 5, 7, or 9 blocks wide instead of 4, 6, or 8. Odd numbers make it easier to put a door in the CENTER! 🎯</p>  
-            </div>
-
+                <p>Make walls 5, 7, or 9 blocks wide. Odd numbers make it easier to put a door in the CENTER! 🎯</p>  
+            </div>  
             <div class="tip-card" onclick="blockClick(event, '🪜')">  
                 <span class="tip-emoji">🪜</span>  
                 <h3>Add Depth!</h3>  
                 <p>Don't make flat walls! Push some blocks in and others out. Add pillars on corners. 3D walls look 100x better! 🏛️</p>  
-            </div>
-
+            </div>  
             <div class="tip-card" onclick="blockClick(event, '🌊')">  
                 <span class="tip-emoji">🌊</span>  
                 <h3>Build Near Water!</h3>  
-                <p>Water views are awesome AND you get a food source from fishing! Plus, water puts out fire if things go wrong... 🐟</p>  
-            </div>
-
+                <p>Water views are awesome AND you get a food source from fishing! 🐟</p>  
+            </div>  
             <div class="tip-card" onclick="blockClick(event, '🔐')">  
                 <span class="tip-emoji">🔐</span>  
                 <h3>Secret Rooms!</h3>  
-                <p>Build a hidden room behind a painting or bookshelf! Use a lever or button to open a secret piston door! SO COOL! 🤫</p>  
-            </div>
-
+                <p>Build a hidden room behind a painting or bookshelf! Use a lever to open a secret piston door! 🤫</p>  
+            </div>  
             <div class="tip-card" onclick="blockClick(event, '🏰')">  
                 <span class="tip-emoji">🏰</span>  
                 <h3>Start Small, Go BIG!</h3>  
-                <p>Build a small house first, then add rooms, a second floor, a basement, a tower... Your house can keep growing FOREVER! 📈</p>  
+                <p>Build a small house first, then add rooms, a second floor, a basement, a tower... FOREVER! 📈</p>  
             </div>  
         </div>  
     </section>
@@ -1671,13 +1748,10 @@
     <section id="styles">  
         <div class="section-title">  
             <span class="emoji">🏰</span> COOL HOUSE STYLES TO TRY <span class="emoji">🏰</span>  
-        </div>
-
+        </div>  
         <div class="styles-grid">  
             <div class="style-card style-wooden" onclick="blockClick(event, '🏡')">  
-                <div class="style-preview">  
-                    <div style="font-size: 5rem;">🏡</div>  
-                </div>  
+                <div class="style-preview"><div style="font-size: 5rem;">🏡</div></div>  
                 <div class="style-info">  
                     <h3>🪵 Cozy Wooden Cabin</h3>  
                     <div class="difficulty">  
@@ -1687,14 +1761,11 @@
                         <div class="difficulty-block empty"></div>  
                         <div class="difficulty-block empty"></div>  
                     </div>  
-                    <p>Perfect for beginners! Use oak and spruce wood. Add a chimney with cobblestone and a cozy fireplace inside! 🔥</p>  
+                    <p>Perfect for beginners! Use oak and spruce wood. Add a chimney and a cozy fireplace inside! 🔥</p>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="style-card style-castle" onclick="blockClick(event, '🏰')">  
-                <div class="style-preview">  
-                    <div style="font-size: 5rem;">🏰</div>  
-                </div>  
+                <div class="style-preview"><div style="font-size: 5rem;">🏰</div></div>  
                 <div class="style-info">  
                     <h3>🏰 Epic Castle</h3>  
                     <div class="difficulty">  
@@ -1704,14 +1775,11 @@
                         <div class="difficulty-block filled"></div>  
                         <div class="difficulty-block empty"></div>  
                     </div>  
-                    <p>For the brave builder! Stone bricks, towers, a moat with lava or water, and a drawbridge! You'll feel like ROYALTY! 👑</p>  
+                    <p>For the brave builder! Stone bricks, towers, a moat, and a drawbridge! Feel like ROYALTY! 👑</p>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="style-card style-modern" onclick="blockClick(event, '🏢')">  
-                <div class="style-preview">  
-                    <div style="font-size: 5rem;">🏢</div>  
-                </div>  
+                <div class="style-preview"><div style="font-size: 5rem;">🏢</div></div>  
                 <div class="style-info">  
                     <h3>🏢 Modern House</h3>  
                     <div class="difficulty">  
@@ -1721,14 +1789,11 @@
                         <div class="difficulty-block empty"></div>  
                         <div class="difficulty-block empty"></div>  
                     </div>  
-                    <p>White concrete, big glass windows, flat roof with a pool! Use quartz and glass for that sleek modern look! 😎</p>  
+                    <p>White concrete, big glass windows, flat roof with a pool! Use quartz for that sleek look! 😎</p>  
                 </div>  
-            </div>
-
+            </div>  
             <div class="style-card style-treehouse" onclick="blockClick(event, '🌳')">  
-                <div class="style-preview">  
-                    <div style="font-size: 5rem;">🌳</div>  
-                </div>  
+                <div class="style-preview"><div style="font-size: 5rem;">🌳</div></div>  
                 <div class="style-info">  
                     <h3>🌲 Treehouse</h3>  
                     <div class="difficulty">  
@@ -1738,29 +1803,95 @@
                         <div class="difficulty-block empty"></div>  
                         <div class="difficulty-block empty"></div>  
                     </div>  
-                    <p>Build UP in the trees! Use ladders to climb up and build platforms between big oak trees! Mobs can't reach you! 🐒</p>  
+                    <p>Build UP in the trees! Use ladders to climb up. Mobs can't reach you! 🐒</p>  
                 </div>  
             </div>  
         </div>  
     </section>
 
+    <!-- ==================== DAILY JOKE SECTION ==================== -->  
+    <div class="joke-section" id="daily-joke">  
+        <h2 class="joke-section-title">😂 TODAY'S DAILY MINECRAFT JOKE! 😂<br><span style="font-size: 0.6em; color: #555;">A brand new joke EVERY day of the year!</span></h2>
+
+        <div class="joke-main-container">  
+            <!-- Date Banner -->  
+            <div class="joke-date-banner">  
+                <div class="joke-date-text" id="jokeDateText">📅 Loading...</div>  
+                <div class="joke-streak">  
+                    <div class="streak-badge">  
+                        <span>🔥</span>  
+                        <span id="streakCount">1</span>  
+                        <span>day streak!</span>  
+                    </div>  
+                </div>  
+            </div>
+
+            <!-- Main Joke Card -->  
+            <div class="joke-card" id="jokeCard">  
+                <div class="joke-card-inner">  
+                    <span class="joke-category-tag" id="jokeCategory">Loading...</span>  
+                    <span class="joke-emoji-display" id="jokeEmoji">🤔</span>  
+                    <div class="joke-question" id="jokeQuestion">Loading today's joke...</div>  
+                    <div class="joke-reveal-area">  
+                        <div class="joke-answer hidden" id="jokeAnswer">...</div>  
+                        <div class="joke-click-overlay" id="jokeOverlay" onclick="revealJoke()">  
+                            <div class="click-to-reveal">👆 TAP TO REVEAL! 👆</div>  
+                        </div>  
+                    </div>  
+                </div>
+
+                <!-- Joke Footer with Countdown -->  
+                <div class="joke-footer">  
+                    <div class="joke-countdown">  
+                        <span class="countdown-label">⏰ Next joke in:</span>  
+                        <span class="countdown-timer" id="jokeCountdown">--:--:--</span>  
+                    </div>  
+                    <div class="joke-share-btns">  
+                        <button class="joke-share-btn" onclick="copyJoke()" title="Copy joke">📋</button>  
+                        <button class="joke-share-btn" onclick="randomJoke()" title="Sneak peek random joke">🎲</button>  
+                        <button class="joke-share-btn" onclick="resetDailyJoke()" title="Back to today's joke">📅</button>  
+                    </div>  
+                </div>  
+            </div>
+
+            <!-- Joke Rating -->  
+            <div class="joke-rating">  
+                <div class="rating-label">Rate today's joke! 👇</div>  
+                <div class="rating-faces">  
+                    <button class="rate-btn" onclick="rateJoke(this, '😐')" title="Meh">😐</button>  
+                    <button class="rate-btn" onclick="rateJoke(this, '😄')" title="Funny!">😄</button>  
+                    <button class="rate-btn" onclick="rateJoke(this, '🤣')" title="HILARIOUS!">🤣</button>  
+                    <button class="rate-btn" onclick="rateJoke(this, '💀')" title="I'M DEAD!">💀</button>  
+                </div>  
+                <div class="rating-result" id="ratingResult"></div>  
+            </div>
+
+            <!-- Joke History (Last 7 days) -->  
+            <div class="joke-history">  
+                <div class="joke-history-header" onclick="toggleHistory()">  
+                    <span class="joke-history-title">📜 PREVIOUS JOKES (Last 7 Days)</span>  
+                    <span class="joke-history-toggle" id="historyToggle">▼</span>  
+                </div>  
+                <div class="joke-history-list" id="historyList"></div>  
+            </div>  
+        </div>  
+    </div>
+
     <!-- Interactive Builder -->  
     <section id="builder">  
         <div class="section-title">  
             <span class="emoji">🎨</span> MINI BLOCK BUILDER <span class="emoji">🎨</span>  
-        </div>
-
+        </div>  
         <p style="text-align: center; font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: #333; margin-bottom: 20px;">  
             Pick a block color and click on the grid to design your own mini house! 🖌️  
-        </p>
-
+        </p>  
         <div class="builder-area">  
             <div class="block-palette" id="palette">  
                 <div class="palette-block selected" style="background: #A0522D;" data-color="#A0522D" onclick="selectBlock(this)" title="Wood"></div>  
                 <div class="palette-block" style="background: #888;" data-color="#888" onclick="selectBlock(this)" title="Stone"></div>  
                 <div class="palette-block" style="background: rgba(135,206,235,0.7); border-color: #87CEEB;" data-color="rgba(135,206,235,0.7)" onclick="selectBlock(this)" title="Glass"></div>  
                 <div class="palette-block" style="background: #654321;" data-color="#654321" onclick="selectBlock(this)" title="Dark Wood"></div>  
-                <div class="palette-block" style="background: #8B0000;" data-color="#8B0000" onclick="selectBlock(this)" title="Red (Roof)"></div>  
+                <div class="palette-block" style="background: #8B0000;" data-color="#8B0000" onclick="selectBlock(this)" title="Red"></div>  
                 <div class="palette-block" style="background: #5D8C00;" data-color="#5D8C00" onclick="selectBlock(this)" title="Green"></div>  
                 <div class="palette-block" style="background: #FFD700;" data-color="#FFD700" onclick="selectBlock(this)" title="Gold"></div>  
                 <div class="palette-block" style="background: #00CED1;" data-color="#00CED1" onclick="selectBlock(this)" title="Diamond"></div>  
@@ -1768,10 +1899,8 @@
                 <div class="palette-block" style="background: #9B59B6;" data-color="#9B59B6" onclick="selectBlock(this)" title="Purple"></div>  
                 <div class="palette-block" style="background: #fff;" data-color="#fff" onclick="selectBlock(this)" title="White"></div>  
                 <div class="palette-block eraser" data-color="transparent" onclick="selectBlock(this)" title="Eraser"></div>  
-            </div>
-
-            <div class="build-grid" id="buildGrid"></div>
-
+            </div>  
+            <div class="build-grid" id="buildGrid"></div>  
             <div class="builder-controls">  
                 <button class="builder-btn clear" onclick="clearGrid()">🗑️ CLEAR</button>  
                 <button class="builder-btn template" onclick="loadTemplate()">🏠 TEMPLATE</button>  
@@ -1780,23 +1909,11 @@
         </div>  
     </section>
 
-    <!-- Joke Section -->  
-    <div class="joke-section">  
-        <h2 style="font-family: 'Press Start 2P', monospace; font-size: clamp(0.8rem, 2vw, 1.2rem); margin-bottom: 20px; color: #333;">😂 MINECRAFT JOKE BREAK! 😂</h2>  
-          
-        <div class="joke-card" id="jokeCard" onclick="showNextJoke()">  
-            <div class="joke-question" id="jokeQuestion">Why did the Creeper cross the road? 🤔</div>  
-            <div class="joke-answer" id="jokeAnswer">To get to the other SSSSSide! 💥😂</div>  
-            <p class="joke-hint" id="jokeHint">👆 Click to reveal the answer!</p>  
-        </div>  
-    </div>
-
     <!-- Quiz Section -->  
     <section id="quiz">  
         <div class="section-title">  
             <span class="emoji">🧠</span> BUILDING BRAIN QUIZ! <span class="emoji">🧠</span>  
-        </div>
-
+        </div>  
         <div class="quiz-container">  
             <div class="quiz-score" id="quizScore">Score: 0 / 0</div>  
             <div class="quiz-question" id="quizQuestion">Loading question...</div>  
@@ -1844,29 +1961,540 @@
     </footer>
 
     <script>  
-        // ==================== BLOCK CLICK COUNTER ====================  
+        // ==================== MASSIVE DAILY JOKE DATABASE (365 jokes!) ====================  
+        const ALL_JOKES = [  
+            // Creeper jokes (0-29)  
+            { q: "Why did the Creeper cross the road?", a: "To get to the other SSSSSide! 💥", emoji: "💚", cat: "creeper" },  
+            { q: "What's a Creeper's favorite subject in school?", a: "HISSSStory! 📚💥", emoji: "💚", cat: "creeper" },  
+            { q: "Why don't Creepers ever get invited to parties?", a: "Because they always BLOW UP the dance floor! 💃💥", emoji: "🎉", cat: "creeper" },  
+            { q: "What did the Creeper say to Steve on Valentine's Day?", a: "I get a BLAST out of being near you! 💕💥", emoji: "💘", cat: "creeper" },  
+            { q: "Why did the Creeper break up with his girlfriend?", a: "She said he was too EXPLOSIVE! 💔💥", emoji: "💔", cat: "creeper" },  
+            { q: "What do you call a Creeper in a suit?", a: "A BOOMER-ang! 🤵💥", emoji: "🤵", cat: "creeper" },  
+            { q: "Why was the Creeper a bad comedian?", a: "His jokes always BOMBED! 🎤💥", emoji: "🎤", cat: "creeper" },  
+            { q: "What's a Creeper's favorite song?", a: "'TNT' by AC/DC! 🎵💥", emoji: "🎵", cat: "creeper" },  
+            { q: "Why did the Creeper go to therapy?", a: "He had too many BLOW-ups! 🛋️💥", emoji: "🧠", cat: "creeper" },  
+            { q: "What do Creepers eat for breakfast?", a: "BOOM-berry muffins! 🧁💥", emoji: "🧁", cat: "creeper" },  
+            { q: "How does a Creeper answer the phone?", a: "SSSS-ello? 📞💥", emoji: "📞", cat: "creeper" },  
+            { q: "Why don't Creepers play hide and seek?", a: "Because they always give away their spot with a BANG! 💥", emoji: "🙈", cat: "creeper" },  
+            { q: "What's a Creeper's favorite movie?", a: "The BLAST of the Mohicans! 🎬💥", emoji: "🎬", cat: "creeper" },  
+            { q: "Why did the Creeper become a musician?", a: "He was great at dropping the BASS... and everything else! 🎸💥", emoji: "🎸", cat: "creeper" },  
+            { q: "What do you call a Creeper who won't explode?", a: "A dud! 😅", emoji: "😅", cat: "creeper" },  
+            { q: "Why did the Creeper fail art class?", a: "He kept DESTROYING his masterpieces! 🎨💥", emoji: "🎨", cat: "creeper" },  
+            { q: "What's a Creeper's dream job?", a: "Demolition expert! 🏗️💥", emoji: "🏗️", cat: "creeper" },  
+            { q: "Why did the Creeper join the gym?", a: "He wanted to work on his EXPLOSIVE power! 💪💥", emoji: "💪", cat: "creeper" },  
+            { q: "What do you call a baby Creeper?", a: "A little FIRE-cracker! 🧨", emoji: "👶", cat: "creeper" },  
+            { q: "Why are Creepers so bad at sports?", a: "They always BLOW the game! 🏀💥", emoji: "🏀", cat: "creeper" },  
+            { q: "What's a Creeper's least favorite weather?", a: "A BLAST of cold air! 🌬️💥", emoji: "🌬️", cat: "creeper" },  
+            { q: "Why did the Creeper get detention?", a: "He had a SHORT fuse! 😤💥", emoji: "🏫", cat: "creeper" },  
+            { q: "What does a Creeper put on his sandwich?", a: "BOOM-ustard! 🥪💥", emoji: "🥪", cat: "creeper" },  
+            { q: "Why can't Creepers play piano?", a: "They blow up every KEY! 🎹💥", emoji: "🎹", cat: "creeper" },  
+            { q: "What's a Creeper's favorite exercise?", a: "BURP-ees... wait, BLURP-ees! 🏋️💥", emoji: "🏋️", cat: "creeper" },  
+            { q: "Why was the Creeper so popular online?", a: "His posts always went VIRAL... and BOOM! 📱💥", emoji: "📱", cat: "creeper" },  
+            { q: "What do Creepers do at the beach?", a: "Make SAND-blasts! 🏖️💥", emoji: "🏖️", cat: "creeper" },  
+            { q: "Why did the Creeper write a book?", a: "It was a real BLAST to read! 📖💥", emoji: "📖", cat: "creeper" },  
+            { q: "What's a Creeper's favorite holiday?", a: "The 4th of July - FIREWORKS! 🎆💥", emoji: "🎆", cat: "creeper" },  
+            { q: "Why don't Creepers use elevators?", a: "They always push the WRONG button and blow the doors off! 🛗💥", emoji: "🛗", cat: "creeper" },
+
+            // Mob jokes (30-69)  
+            { q: "Why don't Endermen ever win staring contests?", a: "Because you look at them and they TELEPORT away! 👀", emoji: "👾", cat: "mob" },  
+            { q: "What do Zombies eat for dinner?", a: "BRAIN food! 🧠🍽️", emoji: "🧟", cat: "mob" },  
+            { q: "Why was the Skeleton so calm?", a: "Because nothing gets UNDER HIS SKIN! 💀😎", emoji: "💀", cat: "mob" },  
+            { q: "What's a Ghast's favorite food?", a: "SCREAM cheese! 👻🧀", emoji: "👻", cat: "mob" },  
+            { q: "Why did the Spider go to school?", a: "To improve his WEB design skills! 🕷️💻", emoji: "🕷️", cat: "mob" },  
+            { q: "What do you call a Zombie who tells jokes?", a: "Dead funny! 🧟😂", emoji: "🧟", cat: "mob" },  
+            { q: "Why did the Skeleton refuse to fight?", a: "He didn't have the GUTS! 💀", emoji: "💀", cat: "mob" },  
+            { q: "What's an Enderman's favorite game?", a: "Block and SEEK! 👾🧊", emoji: "👾", cat: "mob" },  
+            { q: "Why do Blazes make terrible friends?", a: "They're way too HOT-headed! 🔥😡", emoji: "🔥", cat: "mob" },  
+            { q: "What do you call a Witch who's nice?", a: "A SAND-witch! 🧙‍♀️🥪", emoji: "🧙‍♀️", cat: "mob" },  
+            { q: "Why don't Phantoms have any friends?", a: "Because they only come out when you DON'T SLEEP! 😴👻", emoji: "👻", cat: "mob" },  
+            { q: "What kind of music do Skeletons like?", a: "Anything with a good BONE beat! 💀🎵", emoji: "🎵", cat: "mob" },  
+            { q: "Why was the Wither so grumpy?", a: "He had THREE bad heads on his shoulders! 👿👿👿", emoji: "👿", cat: "mob" },  
+            { q: "What do you call a Zombie Villager?", a: "A DEAD-icated worker! 🧟‍♂️👷", emoji: "🧟‍♂️", cat: "mob" },  
+            { q: "Why did the Slime go to the doctor?", a: "He was feeling a bit BOUNCY! 🟩🏥", emoji: "🟩", cat: "mob" },  
+            { q: "What's a Spider's favorite day?", a: "WEB-nesday! 🕷️📅", emoji: "🕷️", cat: "mob" },  
+            { q: "Why don't Endermen like rain?", a: "Because water makes them DISAPPEAR! 🌧️👾", emoji: "🌧️", cat: "mob" },  
+            { q: "What did the Zombie say to Steve?", a: "'I just want to eat your BRAAAAINS!' ...nothing personal! 🧟🧠", emoji: "🧟", cat: "mob" },  
+            { q: "Why was the Iron Golem a good bodyguard?", a: "He's got an IRON will! 🤖💪", emoji: "🤖", cat: "mob" },  
+            { q: "What's a Skeleton Horse's favorite sport?", a: "DEAD lifting! 🏋️💀🐴", emoji: "🐴", cat: "mob" },  
+            { q: "Why did the Zombie go to school?", a: "He wanted to improve his DEAD-ucation! 🧟📚", emoji: "📚", cat: "mob" },  
+            { q: "What did the Blaze say at the party?", a: "'I'm on FIRE tonight!' 🔥🎉", emoji: "🔥", cat: "mob" },  
+            { q: "Why are Guardians bad at keeping secrets?", a: "They have LASER focus on telling everyone! 🐡🔵", emoji: "🐡", cat: "mob" },  
+            { q: "What do you call a Skeleton who sits around all day?", a: "Lazy BONES! 💀🦴", emoji: "🦴", cat: "mob" },  
+            { q: "Why did the Vex go to the eye doctor?", a: "It couldn't see through WALLS! Oh wait... it can! 👻👀", emoji: "👻", cat: "mob" },  
+            { q: "What's an Evoker's favorite magic word?", a: "FANGS very much! 🧙‍♂️🦷", emoji: "🧙‍♂️", cat: "mob" },  
+            { q: "Why don't Drowned like summer?", a: "They prefer POOL parties year-round! 🧟‍♂️🏊", emoji: "🏊", cat: "mob" },  
+            { q: "What did the Silverfish say to the stone?", a: "'I'm just gonna HIDE inside you, cool?' 🐛🪨", emoji: "🐛", cat: "mob" },  
+            { q: "Why was the Warden invited to concerts?", a: "Because he has AMAZING hearing! 👂🎵", emoji: "👂", cat: "mob" },  
+            { q: "What's a Pillager's favorite store?", a: "TARGET! 🏹🎯", emoji: "🎯", cat: "mob" },  
+            { q: "Why did the Shulker go to school?", a: "To come out of his SHELL! 📦🐚", emoji: "📦", cat: "mob" },  
+            { q: "What do you call a Magma Cube's birthday?", a: "A HOT mess! 🟧🎂", emoji: "🎂", cat: "mob" },  
+            { q: "Why did the Ravager go on a diet?", a: "He was too BEAST-ly! 🐂😤", emoji: "🐂", cat: "mob" },  
+            { q: "What's an Elder Guardian's favorite game?", a: "Go FISH! 🐡🎣", emoji: "🎣", cat: "mob" },  
+            { q: "Why did the Stray move to Alaska?", a: "He felt right at HOME in the cold! ❄️💀", emoji: "❄️", cat: "mob" },  
+            { q: "What does a Hoglin eat?", a: "PORK chops... wait, that's cannibalism! 🐗😱", emoji: "🐗", cat: "mob" },  
+            { q: "Why was the Piglin obsessed with gold?", a: "Because everything else is just NOT his TASTE! 🐷✨", emoji: "✨", cat: "mob" },  
+            { q: "What did the Bat say on Halloween?", a: "'This is MY time to shine!' 🦇🎃", emoji: "🦇", cat: "mob" },  
+            { q: "Why is a Ghast always crying?", a: "Because nobody invites them to the Overworld! 👻😭", emoji: "😭", cat: "mob" },  
+            { q: "What's a Vindicator's favorite tool?", a: "His AXE-cellent personality! 🪓😈", emoji: "🪓", cat: "mob" },
+
+            // Building jokes (70-109)  
+            { q: "What did the wall say to the other wall?", a: "Meet you at the CORNER! 🧱🤝", emoji: "🧱", cat: "building" },  
+            { q: "Why was the Minecraft house sad?", a: "It had too many WINDOWS and no curtains! 🏠😢", emoji: "🏠", cat: "building" },  
+            { q: "What's a builder's favorite music?", a: "BLOCK and Roll! 🎸🧊", emoji: "🎸", cat: "building" },  
+            { q: "Why did the door go to the doctor?", a: "It had a bad HINGE! 🚪🏥", emoji: "🚪", cat: "building" },  
+            { q: "What do you call a house made of dirt?", a: "A NOOB's first night special! 🏠😅", emoji: "😅", cat: "building" },  
+            { q: "Why did the roof break up with the walls?", a: "The relationship was just too OVER the top! 🏠💔", emoji: "🏠", cat: "building" },  
+            { q: "What's a builder's favorite snack?", a: "BLOCK-oli and cheese! 🥦🧀", emoji: "🥦", cat: "building" },  
+            { q: "Why was the staircase always tired?", a: "Because everyone kept STEPPING on it! 🪜😩", emoji: "🪜", cat: "building" },  
+            { q: "What did the crafting table say?", a: "'I've got PLANS for everything!' 🔨📝", emoji: "🔨", cat: "building" },  
+            { q: "Why don't Minecraft houses ever fall down?", a: "Because there's no GRAVITY for blocks! 🧱🪶", emoji: "🪶", cat: "building" },  
+            { q: "What did the furnace say to the coal?", a: "'You really FIRE me up!' 🔥❤️", emoji: "🔥", cat: "building" },  
+            { q: "Why was the fence so popular?", a: "Everyone wanted to be on its SIDE! 🪵👥", emoji: "🪵", cat: "building" },  
+            { q: "What's a bed's favorite time of day?", a: "NIGHT time - duh! 🛏️🌙", emoji: "🛏️", cat: "building" },  
+            { q: "Why did the chest get promoted?", a: "It could STORE a lot of information! 📦🧠", emoji: "📦", cat: "building" },  
+            { q: "What do you call a really tall tower?", a: "Over-BUILT! 🏗️😄", emoji: "🏗️", cat: "building" },  
+            { q: "Why was the glass block see-through?", a: "Because it had nothing to HIDE! 🪟😂", emoji: "🪟", cat: "building" },  
+            { q: "What did the cobblestone say to the pickaxe?", a: "'You really ROCK my world!' ⛏️🪨", emoji: "⛏️", cat: "building" },  
+            { q: "Why did the torch break up with the lantern?", a: "The lantern was too BRIGHT for the relationship! 🔦💡", emoji: "💡", cat: "building" },  
+            { q: "What's a ladder's life motto?", a: "'Always keep CLIMBING!' 🪜🌟", emoji: "🌟", cat: "building" },  
+            { q: "Why was the painting on the wall nervous?", a: "It was FRAMED! 🖼️😰", emoji: "🖼️", cat: "building" },  
+            { q: "What did one brick say to the other?", a: "'I'm STUCK on you!' 🧱❤️", emoji: "❤️", cat: "building" },  
+            { q: "Why was the TNT block so stressed?", a: "It was about to BLOW its top! 🧨😫", emoji: "🧨", cat: "building" },  
+            { q: "What do you call a house with no roof?", a: "An open-MINE-d living space! 🏚️😂", emoji: "🏚️", cat: "building" },  
+            { q: "Why did the bookshelf go to the library?", a: "To see its SHELF-mates! 📚👋", emoji: "📚", cat: "building" },  
+            { q: "What's a piston's favorite dance?", a: "The PUSH and PULL! 🤖💃", emoji: "💃", cat: "building" },  
+            { q: "Why was the beacon so bright?", a: "It had a GLOWING personality! ✨😄", emoji: "✨", cat: "building" },  
+            { q: "What did the hopper say to the chest?", a: "'I'll DROP everything for you!' 📦❤️", emoji: "📦", cat: "building" },  
+            { q: "Why did the anvil fail the test?", a: "Too much PRESSURE! 🔨😵", emoji: "🔨", cat: "building" },  
+            { q: "What's a Minecraft architect's favorite word?", a: "BLOCK-buster! 🎬🧱", emoji: "🎬", cat: "building" },  
+            { q: "Why did the trapdoor feel sneaky?", a: "Because it's always UP to something! 🪤😏", emoji: "😏", cat: "building" },  
+            { q: "What's the laziest block in Minecraft?", a: "The BED - it's always lying around! 🛏️😴", emoji: "😴", cat: "building" },  
+            { q: "Why did the builder bring a ladder to the bar?", a: "He heard the drinks were on the HOUSE! 🏠🍹", emoji: "🍹", cat: "building" },  
+            { q: "What did the floor say to the ceiling?", a: "'You're really ABOVE me!' 😤⬆️", emoji: "⬆️", cat: "building" },  
+            { q: "Why don't Minecraft houses have basements?", a: "Because digging DOWN is a whole other level! 🏠⬇️", emoji: "⬇️", cat: "building" },  
+            { q: "What kind of house does a sheep build?", a: "A WOOL-house! 🐑🏠", emoji: "🐑", cat: "building" },  
+            { q: "Why was the Minecraft mansion so popular?", a: "It had great BLOCK appeal! 🏰👍", emoji: "🏰", cat: "building" },  
+            { q: "What's a sign's job in Minecraft?", a: "To POST important messages! 🪧📝", emoji: "🪧", cat: "building" },  
+            { q: "Why did the campfire tell stories?", a: "Because it was a great FIRE-side chat! 🏕️🔥", emoji: "🏕️", cat: "building" },  
+            { q: "What did the lever say to the door?", a: "'I've got the POWER to open you!' ⚡🚪", emoji: "⚡", cat: "building" },  
+            { q: "Why did the builder go broke?", a: "He spent all his diamonds on WINDOW shopping! 💎🪟", emoji: "💎", cat: "building" },
+
+            // Mining jokes (110-149)  
+            { q: "What did Steve say to the diamond ore?", a: "'I really DIG you!' ⛏️💎", emoji: "💎", cat: "mining" },  
+            { q: "Why was the miner so good at school?", a: "He always DUG deep into his studies! 📚⛏️", emoji: "📚", cat: "mining" },  
+            { q: "What's a miner's favorite type of music?", a: "ROCK! 🎸🪨", emoji: "🎸", cat: "mining" },  
+            { q: "Why did the pickaxe break up with the shovel?", a: "They just weren't on the same LEVEL! ⛏️🪏", emoji: "⛏️", cat: "mining" },  
+            { q: "What do you call a diamond that's not real?", a: "A SHAM-ond! 💎❌", emoji: "❌", cat: "mining" },  
+            { q: "Why don't miners ever get lost?", a: "Because they always know which way is DOWN! ⬇️", emoji: "⬇️", cat: "mining" },  
+            { q: "What's an ore's favorite day?", a: "MINE-day (Monday)! 💎📅", emoji: "📅", cat: "mining" },  
+            { q: "Why was the coal so popular?", a: "Because it was a real GEM... well, almost! 🖤😅", emoji: "🖤", cat: "mining" },  
+            { q: "What did the lava say to the miner?", a: "'You're gonna have a MELT-down!' 🌋😱", emoji: "🌋", cat: "mining" },  
+            { q: "Why did the iron ore go to the gym?", a: "To get SMELTED into shape! 💪🔥", emoji: "💪", cat: "mining" },  
+            { q: "What's underground and makes you rich?", a: "DIAMOND ore... if you can FIND it! 💎🔍", emoji: "🔍", cat: "mining" },  
+            { q: "Why did the gold nugget feel special?", a: "Because it was worth its WEIGHT! ✨⚖️", emoji: "⚖️", cat: "mining" },  
+            { q: "What's a miner's biggest fear?", a: "Falling into LAVA with all their diamonds! 🌋💎😭", emoji: "😭", cat: "mining" },  
+            { q: "Why did the redstone go to therapy?", a: "It had too many POWER issues! 🔴🧠", emoji: "🔴", cat: "mining" },  
+            { q: "What do you call mining at layer 1?", a: "BEDROCK bottom! 🪨⬇️", emoji: "🪨", cat: "mining" },  
+            { q: "Why was the emerald so stuck up?", a: "Because it thought it was the RAREST! 💚👑", emoji: "💚", cat: "mining" },  
+            { q: "What did the torch say in the cave?", a: "'I'm the LIGHT of your life down here!' 🔦❤️", emoji: "🔦", cat: "mining" },  
+            { q: "Why did the miner bring a bed underground?", a: "For a QUICK nap between diamond hunts! 🛏️💎", emoji: "🛏️", cat: "mining" },  
+            { q: "What's the most BORING block?", a: "Stone... you see it EVERYWHERE! 🪨😑", emoji: "😑", cat: "mining" },  
+            { q: "Why did the gravel block cry?", a: "It always FALLS apart! 🪨😢", emoji: "😢", cat: "mining" },  
+            { q: "What do miners say when they find diamonds?", a: "JACK-POT... or should I say, PICK-POT! ⛏️💎🎰", emoji: "🎰", cat: "mining" },  
+            { q: "Why is strip mining so effective?", a: "Because it really STRIPS away the competition! ⛏️🏆", emoji: "🏆", cat: "mining" },  
+            { q: "What does a miner never leave home without?", a: "His PICK-me-up! ⛏️☕", emoji: "☕", cat: "mining" },  
+            { q: "Why did the copper ore turn green?", a: "It was feeling a little OXIDIZED! 🟢🧪", emoji: "🧪", cat: "mining" },  
+            { q: "What's a miner's favorite candy?", a: "ROCK candy! 🍬🪨", emoji: "🍬", cat: "mining" },  
+            { q: "Why did the miner hate gravel?", a: "It kept FALLING on his head! 🪨😤", emoji: "😤", cat: "mining" },  
+            { q: "What did the diamond say to the netherite?", a: "'You think you're TOUGHER than me?!' 💎😡", emoji: "💎", cat: "mining" },  
+            { q: "Why did the Lapis Lazuli feel blue?", a: "Because that's literally its COLOR! 🔵😂", emoji: "🔵", cat: "mining" },  
+            { q: "What's a miner's favorite drink?", a: "MINERAL water! 💧⛏️", emoji: "💧", cat: "mining" },  
+            { q: "Why was the Ancient Debris so hard to find?", a: "Because it's playing HARD to get! 🟤😏", emoji: "🟤", cat: "mining" },  
+            { q: "What did the miner say after a long day?", a: "'That was EX-CAVE-ating!' ⛏️😂", emoji: "⛏️", cat: "mining" },  
+            { q: "Why did the amethyst geode giggle?", a: "Because someone CRACKED it up! 🟣😆", emoji: "🟣", cat: "mining" },  
+            { q: "What does obsidian and homework have in common?", a: "They both take FOREVER to break through! 🪨📚", emoji: "📚", cat: "mining" },  
+            { q: "Why did the miner start a band?", a: "Because he was great at PICKING! 🎸⛏️", emoji: "🎸", cat: "mining" },  
+            { q: "What's a cave's favorite joke?", a: "Anything that's really DEEP! 🕳️🤣", emoji: "🕳️", cat: "mining" },  
+            { q: "Why did the deepslate feel superior?", a: "Because it's the DEEPEST thinker! 🪨🧠", emoji: "🧠", cat: "mining" },  
+            { q: "What did the mine shaft say?", a: "'I'm going through a ROUGH patch!' ⛏️😩", emoji: "😩", cat: "mining" },  
+            { q: "Why did the dripstone hurt?", a: "Because it's a real PAIN in the stalactite! 🪨😬", emoji: "😬", cat: "mining" },  
+            { q: "What's a miner's favorite subject?", a: "GEOMETRY - because everything is BLOCKS! 📐🧊", emoji: "📐", cat: "mining" },  
+            { q: "Why do miners love math?", a: "Because they're always working with NUMBERS of ores! 🔢💎", emoji: "🔢", cat: "mining" },
+
+            // Food jokes (150-179)  
+            { q: "What did the cake say in Minecraft?", a: "'I'm a LIE!' ...wait, wrong game! 🎂😂", emoji: "🎂", cat: "food" },  
+            { q: "Why did the chicken cross the Minecraft world?", a: "To prove it wasn't a CHICKEN! 🐔💪", emoji: "🐔", cat: "food" },  
+            { q: "What's Steve's favorite snack?", a: "SQUARE meals! 🍽️🧊", emoji: "🍽️", cat: "food" },  
+            { q: "Why was the golden apple so expensive?", a: "Because it's 24 KARAT delicious! 🍎✨", emoji: "🍎", cat: "food" },  
+            { q: "What did the steak say to Steve?", a: "'Don't you DARE put me in a furnace!' 🥩🔥", emoji: "🥩", cat: "food" },  
+            { q: "Why don't Minecraft cookies taste good?", a: "Because they're made of PIXELS! 🍪👾", emoji: "🍪", cat: "food" },  
+            { q: "What's a cow's least favorite Minecraft moment?", a: "When Steve shows up with a SWORD at dinner time! 🐄⚔️", emoji: "🐄", cat: "food" },  
+            { q: "Why did the bread feel kneaded?", a: "Because WHEAT else would you do with it! 🍞😂", emoji: "🍞", cat: "food" },  
+            { q: "What does Steve eat in the morning?", a: "BLOCK-fast! 🥣🧊", emoji: "🥣", cat: "food" },  
+            { q: "Why was the pumpkin pie scared?", a: "Because Steve kept CARVING into it! 🥧😱", emoji: "🥧", cat: "food" },  
+            { q: "What did the beetroot soup say?", a: "'Nobody ever PICKS me!' 🥣😢", emoji: "😢", cat: "food" },  
+            { q: "Why is fishing in Minecraft relaxing?", a: "Because you just SIT there and wait for BITES! 🎣😌", emoji: "🎣", cat: "food" },  
+            { q: "What's a zombie's favorite food?", a: "ROTTEN flesh... yum? 🧟🤢", emoji: "🤢", cat: "food" },  
+            { q: "Why did Steve bring a melon to the fight?", a: "For a little SLICE of courage! 🍉⚔️", emoji: "🍉", cat: "food" },  
+            { q: "What do you call a suspicious stew?", a: "A MYSTERY meal! 🍲🔍", emoji: "🍲", cat: "food" },  
+            { q: "Why was the carrot always happy?", a: "Because it's always on a STICK and ready to go! 🥕😊", emoji: "🥕", cat: "food" },  
+            { q: "What's a pig's worst nightmare?", a: "Steve with a PORKCHOP recipe! 🐷🍖😱", emoji: "🐷", cat: "food" },  
+            { q: "Why did the mushroom stew feel special?", a: "Because it's a FUNGI at parties! 🍄🎉", emoji: "🍄", cat: "food" },  
+            { q: "What do you get when you smelt raw chicken?", a: "A CLUCKING good dinner! 🐔🍗", emoji: "🍗", cat: "food" },  
+            { q: "Why is cake the best food in Minecraft?", a: "You can have your cake and EAT IT block by block! 🎂😋", emoji: "🎂", cat: "food" },  
+            { q: "What does a rabbit drop for dinner?", a: "Rabbit STEW-pidly delicious meat! 🐰🍲", emoji: "🐰", cat: "food" },  
+            { q: "Why did the apple fall from the tree?", a: "Because Steve PUNCHED the tree! 🍎🌳👊", emoji: "🍎", cat: "food" },  
+            { q: "What's the fanciest food in Minecraft?", a: "Enchanted Golden Apple - fit for a KING! 🍎👑", emoji: "👑", cat: "food" },  
+            { q: "Why did the potato feel underground?", a: "Because that's literally where it GROWS! 🥔⬇️", emoji: "🥔", cat: "food" },  
+            { q: "What did the sweet berry say to Steve?", a: "'Stop BUSH-ing through me!' 🫐😤", emoji: "🫐", cat: "food" },  
+            { q: "Why was the chorus fruit magical?", a: "Because it TELEPORTS you! That's NOT normal food! 🍇✨", emoji: "🍇", cat: "food" },  
+            { q: "What did the raw cod say?", a: "'I'm FLOUNDERING without a furnace!' 🐟🔥", emoji: "🐟", cat: "food" },  
+            { q: "Why is honey so sweet in Minecraft?", a: "Because bees work BLOCK-ingly hard! 🍯🐝", emoji: "🍯", cat: "food" },  
+            { q: "What's a kelp's dream?", a: "To be DRIED and famous! 🌿⭐", emoji: "🌿", cat: "food" },  
+            { q: "Why did Steve eat spider eyes?", a: "He was REALLY desperate... and a little POISONED! 👁️🤢", emoji: "👁️", cat: "food" },
+
+            // Nether jokes (180-209)  
+            { q: "What did Steve say when he entered the Nether?", a: "'Well, this is a HOT mess!' 🔥😅", emoji: "🔥", cat: "nether" },  
+            { q: "Why is the Nether so scary?", a: "Because it's literally HELL-o world! 🔥👋", emoji: "🌋", cat: "nether" },  
+            { q: "What did the Ghast say to the Blaze?", a: "'Quit CRYING about it!'... oh wait, I'm the one crying! 👻😭", emoji: "👻", cat: "nether" },  
+            { q: "Why did the Piglin trade gold?", a: "Because it's the GOLD standard of business! 🐷✨", emoji: "🐷", cat: "nether" },  
+            { q: "What's the worst thing about the Nether?", a: "No beds... unless you want to EXPLODE! 🛏️💥", emoji: "💥", cat: "nether" },  
+            { q: "Why was the Nether Fortress empty?", a: "Everyone was on a BLAZE of glory break! 🔥🏰", emoji: "🏰", cat: "nether" },  
+            { q: "What did the lava ocean say?", a: "'LAVA you all!' ❤️🌋", emoji: "❤️", cat: "nether" },  
+            { q: "Why did Steve bring ice to the Nether?", a: "To make a COOL entrance! 🧊😎", emoji: "🧊", cat: "nether" },  
+            { q: "What's a Strider's dream vacation?", a: "A lava LAKE resort! 🌋🏖️", emoji: "🏖️", cat: "nether" },  
+            { q: "Why don't clocks work in the Nether?", a: "Because time literally SPINS out of control! ⏰🌀", emoji: "⏰", cat: "nether" },  
+            { q: "What's the Nether's favorite season?", a: "SUMMER - every single day! ☀️🔥", emoji: "☀️", cat: "nether" },  
+            { q: "Why was the Wither Skeleton so tall?", a: "He drank his LAVA milk! 💀🥛", emoji: "🥛", cat: "nether" },  
+            { q: "What do you call a Nether highway?", a: "The HOT lane! 🛣️🔥", emoji: "🛣️", cat: "nether" },  
+            { q: "Why did the Nether Portal break?", a: "It couldn't handle the PRESSURE of both dimensions! 🟪💔", emoji: "🟪", cat: "nether" },  
+            { q: "What's Netherrack's favorite hobby?", a: "Being SET on FIRE! 🔥🪨", emoji: "🪨", cat: "nether" },  
+            { q: "Why was the Soul Sand so slow?", a: "Because it has a LOT on its SOUL! 🟤👻", emoji: "🟤", cat: "nether" },  
+            { q: "What did the Basalt say to the Blackstone?", a: "'You're my ROCK!' 🪨❤️", emoji: "🪨", cat: "nether" },  
+            { q: "Why did the Magma Cube giggle?", a: "Because it was a real HOT joke! 🟧😂", emoji: "🟧", cat: "nether" },  
+            { q: "What's a Nether Wart's life goal?", a: "To be in EVERY potion recipe! 🌱🧪", emoji: "🧪", cat: "nether" },  
+            { q: "Why did the Ghast leave the Nether?", a: "It wanted a BREATH of fresh air! 👻🌬️", emoji: "🌬️", cat: "nether" },  
+            { q: "What did the Blaze say to the water?", a: "'NOOOOO! My one weakness!' 🔥💧😱", emoji: "💧", cat: "nether" },  
+            { q: "Why is ancient debris so stubborn?", a: "It refuses to BURN! Even in LAVA! 🟤🔥😤", emoji: "🟤", cat: "nether" },  
+            { q: "What did the Nether say to the Overworld?", a: "'You think YOU'RE hot? Hold my lava!' 🌋😏", emoji: "🌋", cat: "nether" },  
+            { q: "Why did the Warped Forest feel weird?", a: "Because it's literally WARPED! 🟦🌀", emoji: "🟦", cat: "nether" },  
+            { q: "What's a Hoglin's biggest fear?", a: "Warped fungus! It makes them RUN AWAY screaming! 🐗🍄😱", emoji: "🐗", cat: "nether" },  
+            { q: "Why was the Crimson Forest so red?", a: "It was BLUSHING from all the attention! 🟥😊", emoji: "🟥", cat: "nether" },  
+            { q: "What did Steve say to the Strider?", a: "'Thanks for the RIDE across the lava!' 🏇🌋", emoji: "🏇", cat: "nether" },  
+            { q: "Why did the Piglin Brute go to anger management?", a: "Because he was always in a RAGE! 🐷😡", emoji: "😡", cat: "nether" },  
+            { q: "What's the Nether's WiFi password?", a: "FIRE-wall123! 🔥🔐", emoji: "🔐", cat: "nether" },  
+            { q: "Why don't people vacation in the Nether?", a: "The reviews are TERRIBLE - too hot, too many mobs, no beds! 🏨⭐", emoji: "⭐", cat: "nether" },
+
+            // General Minecraft jokes (210-279)  
+            { q: "Why is Minecraft so addictive?", a: "Because you can never BLOCK it out of your mind! 🧊🧠", emoji: "🧊", cat: "general" },  
+            { q: "What do Minecraft players and architects have in common?", a: "They both think in BLOCKS! 🏗️🧊", emoji: "🏗️", cat: "general" },  
+            { q: "Why did Steve go to the gym?", a: "To work on his BLOCK-ody! 💪🧊", emoji: "💪", cat: "general" },  
+            { q: "What's the difference between Minecraft and real life?", a: "In Minecraft, punching trees is PRODUCTIVE! 🌳👊", emoji: "🌳", cat: "general" },  
+            { q: "Why was the Minecraft world so lonely?", a: "Because it was a SINGLE player world! 🌍😢", emoji: "🌍", cat: "general" },  
+            { q: "What did Alex say to Steve?", a: "'We should CRAFT a plan together!' 🤝🔨", emoji: "🤝", cat: "general" },  
+            { q: "Why don't Minecraft characters ever feel round?", a: "Because everything is SQUARE! 🧊😂", emoji: "🧊", cat: "general" },  
+            { q: "What's Steve's favorite exercise?", a: "BLOCK squats! 🏋️🧊", emoji: "🏋️", cat: "general" },  
+            { q: "Why was Creative mode so easy?", a: "Because you literally CAN'T fail! ✨😎", emoji: "😎", cat: "general" },  
+            { q: "What's the longest word in Minecraft?", a: "Ssssssssssss... BOOM! 💥😂", emoji: "💥", cat: "general" },  
+            { q: "Why did Steve refuse to sleep?", a: "Because Phantoms are the WORST alarm clock! 👻😴", emoji: "😴", cat: "general" },  
+            { q: "What did Minecraft teach kids about trees?", a: "That you can punch them and they just FLOAT! 🌳🤷", emoji: "🤷", cat: "general" },  
+            { q: "Why is Minecraft better than homework?", a: "Because building is WAY more fun than writing! 🏠📝", emoji: "📝", cat: "general" },  
+            { q: "What's Steve's favorite saying?", a: "'Just one more block...' (3 hours later) 🧊⏰", emoji: "⏰", cat: "general" },  
+            { q: "Why don't Minecraft players need GPS?", a: "They have COORDINATES! F3 for the win! 🗺️📍", emoji: "🗺️", cat: "general" },  
+            { q: "What's the first rule of Minecraft?", a: "Never dig STRAIGHT DOWN! 🕳️😱", emoji: "🕳️", cat: "general" },  
+            { q: "Why did Notch create Minecraft?", a: "Because the world needed more BLOCKS! 🌍🧊", emoji: "🌍", cat: "general" },  
+            { q: "What do you call a Minecraft world with no players?", a: "PEACE-ful mode! 🕊️😌", emoji: "🕊️", cat: "general" },  
+            { q: "Why was the inventory so full?", a: "Because Steve is a HOARDER! 🎒📦", emoji: "🎒", cat: "general" },  
+            { q: "What did Steve say after dying?", a: "'Respawn? Don't mind if I DO!' 💀🔄", emoji: "🔄", cat: "general" },  
+            { q: "Why do Minecraft days go by so fast?", a: "Because they're only 20 MINUTES long! ⏰😱", emoji: "⏰", cat: "general" },  
+            { q: "What's Hardcore mode's motto?", a: "'You only LIVE once!' (Literally!) 💀😬", emoji: "💀", cat: "general" },  
+            { q: "Why did Steve bring a boat to the desert?", a: "For SAND surfing! 🏜️🚣", emoji: "🏜️", cat: "general" },  
+            { q: "What's Alex's favorite fashion?", a: "BLOCK-buster outfits! 👗🧊", emoji: "👗", cat: "general" },  
+            { q: "Why is the End so boring?", a: "Because there's nothing to do after beating the DRAGON! 🐉😴", emoji: "🐉", cat: "general" },  
+            { q: "What did the experience orb say?", a: "'PICK me up! I'll make you LEVEL up!' ✨⬆️", emoji: "✨", cat: "general" },  
+            { q: "Why did Steve stay up all night?", a: "Because MORNING meant more mining! ⛏️🌅", emoji: "🌅", cat: "general" },  
+            { q: "What's the scariest sound in Minecraft?", a: "Cave sounds at 2 AM with headphones on! 🎧😰", emoji: "🎧", cat: "general" },  
+            { q: "Why was the map so confused?", a: "Because the world keeps GENERATING! 🗺️🌀", emoji: "🗺️", cat: "general" },  
+            { q: "What did Steve say to the Ender Dragon?", a: "'It's the END of the line for you!' 🐉⚔️", emoji: "🐉", cat: "general" },  
+            { q: "Why do Minecraft players make bad employees?", a: "They keep taking BREAKS... to mine! ⛏️😂", emoji: "⛏️", cat: "general" },  
+            { q: "What's Steve's password?", a: "'Steve123'... just kidding, it's 'DiamondS_R_Cool!' 💎🔐", emoji: "🔐", cat: "general" },  
+            { q: "Why was the world seed so special?", a: "Because it GREW into something amazing! 🌱🌍", emoji: "🌱", cat: "general" },  
+            { q: "What did the water bucket say to lava?", a: "'We make OBSIDIAN together!' 💧🌋🖤", emoji: "🖤", cat: "general" },  
+            { q: "Why did Steve cross the biome?", a: "To get to the OTHER SIDE... of the desert! 🏜️🚶", emoji: "🚶", cat: "general" },  
+            { q: "What's the best Minecraft pickup line?", a: "'Are you a chest? Because I want to put my stuff in you!' 📦❤️", emoji: "❤️", cat: "general" },  
+            { q: "Why is Survival mode like real life?", a: "You start with NOTHING and have to work for everything! 😤💪", emoji: "😤", cat: "general" },  
+            { q: "What did the compass say?", a: "'I always know which way to POINT!' 🧭➡️", emoji: "🧭", cat: "general" },  
+            { q: "Why did Steve fail cooking class?", a: "He kept trying to SMELT everything! 🔥🍳", emoji: "🍳", cat: "general" },  
+            { q: "What's the funniest thing about Minecraft physics?", a: "Sand falls but EVERYTHING else just FLOATS! 🪨🤷", emoji: "🤷", cat: "general" },
+
+            // Animal jokes (280-329)  
+            { q: "Why did the cow wear a bell?", a: "Because its HORN didn't work! 🐄🔔", emoji: "🐄", cat: "animal" },  
+            { q: "What did the sheep say after being sheared?", a: "'I feel SO much LIGHTER!' 🐑✨", emoji: "🐑", cat: "animal" },  
+            { q: "Why did the chicken lay a diamond?", a: "Just kidding! But wouldn't that be EGG-cellent? 🐔💎", emoji: "🐔", cat: "animal" },  
+            { q: "What's a wolf's favorite food?", a: "BONE appetit! 🐺🦴", emoji: "🐺", cat: "animal" },  
+            { q: "Why did the cat sit on Steve's crafting table?", a: "Because cats sit on EVERYTHING! 🐱🔨", emoji: "🐱", cat: "animal" },  
+            { q: "What do you call a pig struck by lightning?", a: "A Zombified Piglin with a SHOCKING day! ⚡🐷", emoji: "⚡", cat: "animal" },  
+            { q: "Why did the horse refuse the saddle?", a: "It wasn't ready for that kind of COMMITMENT! 🐴😅", emoji: "🐴", cat: "animal" },  
+            { q: "What did the parrot say?", a: "Whatever YOU just said! Parrots COPY everything! 🦜😂", emoji: "🦜", cat: "animal" },  
+            { q: "Why did the dolphin help Steve?", a: "Because dolphins are just NATURALLY helpful! 🐬❤️", emoji: "🐬", cat: "animal" },  
+            { q: "What's an ocelot's favorite game?", a: "Cat and MOUSE! Oh wait... 🐱🐭", emoji: "🐭", cat: "animal" },  
+            { q: "Why did the bee get angry?", a: "Steve took its HONEY without asking! 🐝😡", emoji: "🐝", cat: "animal" },  
+            { q: "What did the squid say to the glow squid?", a: "'Stop trying to OUTSHINE me!' 🦑✨", emoji: "🦑", cat: "animal" },  
+            { q: "Why did Steve tame a fox?", a: "Because foxes are FOXY friends! 🦊❤️", emoji: "🦊", cat: "animal" },  
+            { q: "What's a turtle's favorite block?", a: "SLOW-stone! 🐢🪨", emoji: "🐢", cat: "animal" },  
+            { q: "Why did the llama spit at Steve?", a: "Because Steve was being a LLAMA-brain! 🦙💦", emoji: "🦙", cat: "animal" },  
+            { q: "What do you call a mooshroom at a party?", a: "A FUNGI to be around! 🍄🐄🎉", emoji: "🍄", cat: "animal" },  
+            { q: "Why was the rabbit so fast?", a: "Because it had HOPS! 🐰🏃", emoji: "🐰", cat: "animal" },  
+            { q: "What did the iron golem say to the villager?", a: "'I'll always PROTECT you!' 🤖🛡️", emoji: "🤖", cat: "animal" },  
+            { q: "Why did the panda eat bamboo?", a: "Because there's no PIZZA in Minecraft! 🐼🎋", emoji: "🐼", cat: "animal" },  
+            { q: "What's a bat's least favorite block?", a: "A TORCH - too bright! 🦇🔦", emoji: "🦇", cat: "animal" },  
+            { q: "Why did the chicken cross the lava?", a: "It DIDN'T - chickens aren't THAT dumb! 🐔🌋😂", emoji: "🐔", cat: "animal" },  
+            { q: "What did the wolf say when tamed?", a: "'WOOF you be my best friend?!' 🐺❤️", emoji: "🐺", cat: "animal" },  
+            { q: "Why was the axolotl the cutest mob?", a: "Because it literally IS! Look at that FACE! 🦎💕", emoji: "🦎", cat: "animal" },  
+            { q: "What did the frog say to the firefly?", a: "'You look DELICIOUS!' 🐸✨", emoji: "🐸", cat: "animal" },  
+            { q: "Why did the goat ram Steve?", a: "Because that's just how goats say HELLO! 🐐💥", emoji: "🐐", cat: "animal" },  
+            { q: "What's a polar bear's favorite biome?", a: "The ICE SPIKES - obviously! 🐻‍❄️❄️", emoji: "🐻‍❄️", cat: "animal" },  
+            { q: "Why was the pig riding in a minecart?", a: "Because Steve made a PIG-powered roller coaster! 🐷🎢", emoji: "🎢", cat: "animal" },  
+            { q: "What did the donkey say about carrying chests?", a: "'I'm literally a PACK animal!' 🫏📦", emoji: "🫏", cat: "animal" },  
+            { q: "Why did the snow golem melt?", a: "It went to the DESERT - bad vacation choice! ⛄🏜️😵", emoji: "⛄", cat: "animal" },  
+            { q: "What's a sniffer's favorite hobby?", a: "SNIFFING out ancient seeds! It NOSE what it's doing! 🦕👃", emoji: "🦕", cat: "animal" },  
+            { q: "Why did the camel have two seats?", a: "Because friendship is better TOGETHER! 🐪👫", emoji: "🐪", cat: "animal" },  
+            { q: "What did the allay say?", a: "'I'll FIND anything you want! I'm a NOTE-able helper!' 🧚📝", emoji: "🧚", cat: "animal" },  
+            { q: "Why did Steve bring wheat to the cow?", a: "To MOOO-tivate it to follow him! 🐄🌾", emoji: "🌾", cat: "animal" },  
+            { q: "What's a fish's opinion on Minecraft?", a: "'It's pretty FINTASTIC!' 🐟👍", emoji: "🐟", cat: "animal" },  
+            { q: "Why did the tropical fish feel fancy?", a: "Because it comes in 2,700 different PATTERNS! 🐠✨", emoji: "🐠", cat: "animal" },  
+            { q: "What did the endermite say?", a: "'I may be TINY but I'm still ANNOYING!' 🐛😤", emoji: "🐛", cat: "animal" },  
+            { q: "Why was the phantom mad?", a: "Because Steve FINALLY went to sleep! 👻😤😴", emoji: "👻", cat: "animal" },  
+            { q: "What's a strider's shoes made of?", a: "LAVA-proof material! Hottest kicks in the Nether! 👟🔥", emoji: "👟", cat: "animal" },  
+            { q: "Why did the villager say 'Hmm'?", a: "Because that's literally ALL they can say! Hmmmm! 👨‍🌾🤔", emoji: "👨‍🌾", cat: "animal" },  
+            { q: "What's a warden's favorite music genre?", a: "Anything with good VIBRATIONS! 📳🎵", emoji: "📳", cat: "animal" },
+
+            // Redstone & Enchanting jokes (330-365+)  
+            { q: "Why was the redstone engineer so smart?", a: "Because she had great CIRCUITRY! 🔴🧠", emoji: "🔴", cat: "redstone" },  
+            { q: "What did the repeater say to the comparator?", a: "'I'll REPEAT that for you... again!' 🔴🔁", emoji: "🔁", cat: "redstone" },  
+            { q: "Why was the piston so pushy?", a: "Because that's literally its JOB! 🔴✋", emoji: "✋", cat: "redstone" },  
+            { q: "What's a redstone torch's favorite mood?", a: "Always ON! 🔴💡", emoji: "💡", cat: "redstone" },  
+            { q: "Why did the observer keep watching?", a: "Because it can't help but DETECT changes! 🔴👀", emoji: "👀", cat: "redstone" },  
+            { q: "What's an enchanting table's language?", a: "Standard Galactic Alphabet - or as we call it, GIBBERISH! 📖🔮", emoji: "🔮", cat: "enchant" },  
+            { q: "Why did the sword get Sharpness V?", a: "Because it wanted to be on the CUTTING edge! ⚔️✨", emoji: "⚔️", cat: "enchant" },  
+            { q: "What did Fortune III say to the diamond?", a: "'I'll make MORE of you!' 💎✨💎💎", emoji: "💎", cat: "enchant" },  
+            { q: "Why did the boots get Feather Falling?", a: "Because they were tired of HARD landings! 👢🪶", emoji: "👢", cat: "enchant" },  
+            { q: "What's Infinity's problem?", a: "It never RUNS OUT of issues! 🏹♾️", emoji: "♾️", cat: "enchant" },  
+            { q: "Why did the armor get Protection IV?", a: "Because it wanted MAXIMUM safety vibes! 🛡️✨", emoji: "🛡️", cat: "enchant" },  
+            { q: "What did Mending say to durability?", a: "'Don't worry, I'll FIX everything!' 🔧✨", emoji: "🔧", cat: "enchant" },  
+            { q: "Why was the Silk Touch so gentle?", a: "Because it handles everything with CARE! 🤲✨", emoji: "🤲", cat: "enchant" },  
+            { q: "What did the Curse of Vanishing say?", a: "'Now you see me... now you DON'T!' 👻🔮", emoji: "👻", cat: "enchant" },  
+            { q: "Why was the Thorns enchantment rude?", a: "Because it always HURTS to be around! 🌹😤", emoji: "🌹", cat: "enchant" },  
+            { q: "What's Unbreaking III's secret?", a: "It just REFUSES to give up! 💪✨", emoji: "💪", cat: "enchant" },  
+            { q: "Why did the trident get Riptide?", a: "Because it wanted to FLY through the rain! 🔱🌧️", emoji: "🔱", cat: "enchant" },  
+            { q: "What's a note block's favorite subject?", a: "MUSIC class! 🎵📦", emoji: "🎵", cat: "redstone" },  
+            { q: "Why did the daylight sensor stay outside?", a: "It needed to SOAK UP the sun! ☀️🔴", emoji: "☀️", cat: "redstone" },  
+            { q: "What did the TNT cannon say?", a: "'I'm having a BLAST!' 🧨💥", emoji: "🧨", cat: "redstone" },  
+            { q: "Why was the dropper so sad?", a: "Because nobody PICKS it over the dispenser! 📦😢", emoji: "😢", cat: "redstone" },  
+            { q: "What did the hopper say?", a: "'I'm really good at SUCKING things up!' 📦⬇️", emoji: "⬇️", cat: "redstone" },  
+            { q: "Why did the target block feel bullied?", a: "Everyone keeps SHOOTING at it! 🎯🏹", emoji: "🎯", cat: "redstone" },  
+            { q: "What's a sculk sensor's talent?", a: "It FEELS everything! Literally! 📳🟦", emoji: "🟦", cat: "redstone" },  
+            { q: "Why was the Respiration enchantment so chill?", a: "Because it helps you BREATHE easy! 🫁✨", emoji: "🫁", cat: "enchant" },  
+            { q: "What did Looting III say?", a: "'I make mobs DROP extra stuff! I'm the LOOT master!' 💰✨", emoji: "💰", cat: "enchant" }  
+        ];
+
+        // ==================== DAILY JOKE SYSTEM ====================  
+        function getDayOfYear() {  
+            const now = new Date();  
+            const start = new Date(now.getFullYear(), 0, 0);  
+            const diff = now - start;  
+            const oneDay = 1000 * 60 * 60 * 24;  
+            return Math.floor(diff / oneDay);  
+        }
+
+        function getTodaysJoke() {  
+            const dayOfYear = getDayOfYear();  
+            return ALL_JOKES[dayOfYear % ALL_JOKES.length];  
+        }
+
+        function getJokeForDay(daysAgo) {  
+            const dayOfYear = getDayOfYear() - daysAgo;  
+            const index = ((dayOfYear % ALL_JOKES.length) + ALL_JOKES.length) % ALL_JOKES.length;  
+            return ALL_JOKES[index];  
+        }
+
+        function formatDate(daysAgo) {  
+            const d = new Date();  
+            d.setDate(d.getDate() - daysAgo);  
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];  
+            return `${months[d.getMonth()]} ${d.getDate()}`;  
+        }
+
+        function getFullDate() {  
+            const d = new Date();  
+            const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];  
+            const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];  
+            return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;  
+        }
+
+        function loadDailyJoke() {  
+            const joke = getTodaysJoke();  
+            document.getElementById('jokeDateText').textContent = `📅 ${getFullDate()}`;  
+            document.getElementById('jokeQuestion').textContent = joke.q;  
+            document.getElementById('jokeAnswer').textContent = joke.a;  
+            document.getElementById('jokeEmoji').textContent = joke.emoji;  
+              
+            const catTag = document.getElementById('jokeCategory');  
+            catTag.textContent = joke.cat;  
+            catTag.className = `joke-category-tag cat-${joke.cat}`;
+
+            // Reset reveal state  
+            document.getElementById('jokeAnswer').classList.add('hidden');  
+            document.getElementById('jokeAnswer').classList.remove('revealed');  
+            document.getElementById('jokeOverlay').classList.remove('gone');
+
+            // Load joke history  
+            loadJokeHistory();
+
+            // Streak tracking  
+            updateStreak();  
+        }
+
+        function revealJoke() {  
+            document.getElementById('jokeAnswer').classList.remove('hidden');  
+            document.getElementById('jokeAnswer').classList.add('revealed');  
+            document.getElementById('jokeOverlay').classList.add('gone');  
+              
+            // Fun particles  
+            for (let i = 0; i < 8; i++) {  
+                setTimeout(() => createEmojiRain(), i * 80);  
+            }  
+        }
+
+        function randomJoke() {  
+            const randomIndex = Math.floor(Math.random() * ALL_JOKES.length);  
+            const joke = ALL_JOKES[randomIndex];  
+            document.getElementById('jokeQuestion').textContent = `🎲 RANDOM: ${joke.q}`;  
+            document.getElementById('jokeAnswer').textContent = joke.a;  
+            document.getElementById('jokeEmoji').textContent = joke.emoji;  
+              
+            const catTag = document.getElementById('jokeCategory');  
+            catTag.textContent = `random · ${joke.cat}`;  
+            catTag.className = `joke-category-tag cat-${joke.cat}`;
+
+            document.getElementById('jokeAnswer').classList.add('hidden');  
+            document.getElementById('jokeAnswer').classList.remove('revealed');  
+            document.getElementById('jokeOverlay').classList.remove('gone');
+
+            showAchievement('🎲', 'Random joke unlocked!');  
+        }
+
+        function resetDailyJoke() {  
+            loadDailyJoke();  
+            showAchievement('📅', 'Back to today\'s joke!');  
+        }
+
+        function copyJoke() {  
+            const joke = getTodaysJoke();  
+            const text = `🎮 Minecraft Joke of the Day!\n\n${joke.q}\n${joke.a}\n\n😂 Get a new joke every day!`;  
+            navigator.clipboard.writeText(text).then(() => {  
+                showAchievement('📋', 'Joke copied! Share it with friends!');  
+            }).catch(() => {  
+                showAchievement('📋', 'Joke ready to share!');  
+            });  
+        }
+
+        // Countdown to next joke  
+        function updateCountdown() {  
+            const now = new Date();  
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);  
+            const diff = tomorrow - now;  
+            const hours = Math.floor(diff / (1000 * 60 * 60));  
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));  
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);  
+            document.getElementById('jokeCountdown').textContent =   
+                `${String(hours).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;  
+        }
+
+        setInterval(updateCountdown, 1000);  
+        updateCountdown();
+
+        // Joke History  
+        function loadJokeHistory() {  
+            const list = document.getElementById('historyList');  
+            list.innerHTML = '';  
+            for (let i = 1; i <= 7; i++) {  
+                const joke = getJokeForDay(i);  
+                const item = document.createElement('div');  
+                item.className = 'history-item';  
+                item.innerHTML = `  
+                    <div class="history-date">${formatDate(i)}</div>  
+                    <div class="history-joke">${joke.emoji} ${joke.q} <span>${joke.a}</span></div>  
+                `;  
+                list.appendChild(item);  
+            }  
+        }
+
+        function toggleHistory() {  
+            const list = document.getElementById('historyList');  
+            const toggle = document.getElementById('historyToggle');  
+            list.classList.toggle('open');  
+            toggle.classList.toggle('open');  
+        }
+
+        // Joke Rating  
+        function rateJoke(btn, emoji) {  
+            document.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('selected'));  
+            btn.classList.add('selected');  
+            const messages = {  
+                '😐': 'Okay, we\'ll try harder tomorrow! 💪',  
+                '😄': 'Glad you liked it! Come back tomorrow! 🎉',  
+                '🤣': 'AWESOME! You have great taste in jokes! 🌟',  
+                '💀': 'LOL! You literally DIED laughing! ☠️😂'  
+            };  
+            document.getElementById('ratingResult').textContent = messages[emoji];  
+            showAchievement(emoji, 'Thanks for rating!');  
+        }
+
+        // Streak System  
+        function updateStreak() {  
+            const today = new Date().toDateString();  
+            let streak = parseInt(localStorage.getItem('jokeStreak') || '0');  
+            const lastVisit = localStorage.getItem('lastJokeVisit');  
+              
+            if (lastVisit !== today) {  
+                const yesterday = new Date();  
+                yesterday.setDate(yesterday.getDate() - 1);  
+                if (lastVisit === yesterday.toDateString()) {  
+                    streak++;  
+                } else if (lastVisit) {  
+                    streak = 1;  
+                } else {  
+                    streak = 1;  
+                }  
+                localStorage.setItem('jokeStreak', streak);  
+                localStorage.setItem('lastJokeVisit', today);  
+            }  
+              
+            document.getElementById('streakCount').textContent = streak;  
+              
+            if (streak >= 7) showAchievement('🔥', `${streak} day joke streak! You're on FIRE!`);  
+            else if (streak >= 3) showAchievement('⭐', `${streak} day streak! Keep it going!`);  
+        }
+
+        // ==================== GENERAL FUNCTIONS ====================  
         let totalClicks = 0;  
         let startTime = Date.now();
 
         function blockClick(event, emoji) {  
             totalClicks++;  
             document.getElementById('blockCount').textContent = totalClicks;  
-              
-            // Create floating emoji  
             const pop = document.createElement('div');  
             pop.className = 'block-pop';  
             pop.textContent = emoji;  
             pop.style.left = event.clientX + 'px';  
             pop.style.top = event.clientY + 'px';  
             document.body.appendChild(pop);  
-            setTimeout(() => pop.remove(), 1000);
-
-            // Achievement at 10 clicks  
+            setTimeout(() => pop.remove(), 1000);  
             if (totalClicks === 10) showAchievement('🎯', 'Click Master! 10 blocks clicked!');  
             if (totalClicks === 50) showAchievement('💎', 'Diamond Clicker! 50 blocks!');  
         }
 
-        // Update time counter  
         setInterval(() => {  
             const elapsed = Math.floor((Date.now() - startTime) / 1000);  
             const mins = Math.floor(elapsed / 60);  
@@ -1874,7 +2502,6 @@
             document.getElementById('timeOnSite').textContent = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;  
         }, 1000);
 
-        // ==================== ACHIEVEMENT SYSTEM ====================  
         function showAchievement(icon, message) {  
             const achievement = document.getElementById('achievement');  
             document.querySelector('.achievement-icon').textContent = icon;  
@@ -1883,10 +2510,8 @@
             setTimeout(() => achievement.classList.remove('show'), 3000);  
         }
 
-        // Welcome achievement  
         setTimeout(() => showAchievement('🏆', 'Welcome, Master Builder!'), 1500);
 
-        // ==================== CHECKLIST / PROGRESS ====================  
         function toggleCheck(el) {  
             el.classList.toggle('checked');  
             updateProgress();  
@@ -1899,18 +2524,14 @@
             const percent = (checked.length / items.length) * 100;  
             document.getElementById('progressBar').style.width = percent + '%';  
             document.getElementById('progressText').textContent = `${checked.length} / ${items.length} steps completed!`;  
-              
             if (checked.length === items.length) {  
                 showAchievement('🏠', 'HOUSE COMPLETE! You did it!');  
-                // Emoji rain celebration  
-                for (let i = 0; i < 30; i++) {  
-                    setTimeout(() => createEmojiRain(), i * 100);  
-                }  
+                for (let i = 0; i < 30; i++) setTimeout(() => createEmojiRain(), i * 100);  
             }  
         }
 
         function createEmojiRain() {  
-            const emojis = ['🏠', '⭐', '🎉', '💎', '🎮', '🏆', '✨', '🎊'];  
+            const emojis = ['🏠', '⭐', '🎉', '💎', '🎮', '🏆', '✨', '🎊', '😂', '💚'];  
             const emoji = document.createElement('div');  
             emoji.className = 'emoji-rain';  
             emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];  
@@ -1934,23 +2555,13 @@
             const grid = document.getElementById('buildGrid');  
             const cols = window.innerWidth <= 480 ? 8 : window.innerWidth <= 768 ? 10 : 12;  
             const rows = window.innerWidth <= 480 ? 6 : window.innerWidth <= 768 ? 8 : 10;  
-              
             grid.innerHTML = '';  
             for (let i = 0; i < rows * cols; i++) {  
                 const cell = document.createElement('div');  
                 cell.className = 'grid-cell';  
-                cell.addEventListener('mousedown', (e) => {  
-                    isMouseDown = true;  
-                    paintCell(cell);  
-                    e.preventDefault();  
-                });  
-                cell.addEventListener('mouseenter', () => {  
-                    if (isMouseDown) paintCell(cell);  
-                });  
-                cell.addEventListener('touchstart', (e) => {  
-                    paintCell(cell);  
-                    e.preventDefault();  
-                });  
+                cell.addEventListener('mousedown', (e) => { isMouseDown = true; paintCell(cell); e.preventDefault(); });  
+                cell.addEventListener('mouseenter', () => { if (isMouseDown) paintCell(cell); });  
+                cell.addEventListener('touchstart', (e) => { paintCell(cell); e.preventDefault(); });  
                 grid.appendChild(cell);  
             }  
         }
@@ -1965,9 +2576,7 @@
         }
 
         function clearGrid() {  
-            document.querySelectorAll('.grid-cell').forEach(cell => {  
-                cell.style.backgroundColor = '';  
-            });  
+            document.querySelectorAll('.grid-cell').forEach(cell => cell.style.backgroundColor = '');  
             showAchievement('🗑️', 'Clean slate! Build again!');  
         }
 
@@ -1976,172 +2585,56 @@
             const cells = document.querySelectorAll('.grid-cell');  
             const cols = window.innerWidth <= 480 ? 8 : window.innerWidth <= 768 ? 10 : 12;  
             const rows = window.innerWidth <= 480 ? 6 : window.innerWidth <= 768 ? 8 : 10;  
-              
-            // Simple house template  
             const template = {};  
             const midX = Math.floor(cols / 2);  
-              
-            // Roof  
-            for (let x = midX - 3; x <= midX + 3; x++) {  
-                template[`${1},${x}`] = '#8B0000';  
-            }  
-            for (let x = midX - 2; x <= midX + 2; x++) {  
-                template[`${0},${x}`] = '#8B0000';  
-            }  
-              
-            // Walls  
-            for (let y = 2; y < rows - 1; y++) {  
-                template[`${y},${midX - 3}`] = '#A0522D';  
-                template[`${y},${midX + 3}`] = '#A0522D';  
-            }  
-              
-            // Floor  
-            for (let x = midX - 3; x <= midX + 3; x++) {  
-                template[`${rows - 1},${x}`] = '#888';  
-            }  
-              
-            // Windows  
+            for (let x = midX - 3; x <= midX + 3; x++) { template[`${1},${x}`] = '#8B0000'; }  
+            for (let x = midX - 2; x <= midX + 2; x++) { template[`${0},${x}`] = '#8B0000'; }  
+            for (let y = 2; y < rows - 1; y++) { template[`${y},${midX - 3}`] = '#A0522D'; template[`${y},${midX + 3}`] = '#A0522D'; }  
+            for (let x = midX - 3; x <= midX + 3; x++) { template[`${rows - 1},${x}`] = '#888'; }  
             template[`${3},${midX - 2}`] = 'rgba(135,206,235,0.7)';  
             template[`${3},${midX + 2}`] = 'rgba(135,206,235,0.7)';  
-              
-            // Door  
             template[`${rows - 2},${midX}`] = '#654321';  
-            template[`${rows - 3},${midX}`] = '#654321';
-
-            // Fill walls  
-            for (let y = 2; y < rows - 1; y++) {  
-                for (let x = midX - 2; x <= midX + 2; x++) {  
-                    const key = `${y},${x}`;  
-                    if (!template[key]) {  
-                        template[key] = '#D2A060';  
-                    }  
-                }  
-            }
-
-            cells.forEach((cell, i) => {  
-                const row = Math.floor(i / cols);  
-                const col = i % cols;  
-                const key = `${row},${col}`;  
-                if (template[key]) {  
-                    cell.style.backgroundColor = template[key];  
-                }  
-            });
-
+            template[`${rows - 3},${midX}`] = '#654321';  
+            for (let y = 2; y < rows - 1; y++) { for (let x = midX - 2; x <= midX + 2; x++) { const key = `${y},${x}`; if (!template[key]) template[key] = '#D2A060'; } }  
+            cells.forEach((cell, i) => { const row = Math.floor(i / cols); const col = i % cols; if (template[`${row},${col}`]) cell.style.backgroundColor = template[`${row},${col}`]; });  
             showAchievement('🏠', 'Template loaded! Now customize it!');  
         }
 
         function saveBuilding() {  
-            showAchievement('📸', 'Take a screenshot to share! (Ctrl+Shift+S)');  
-            // Fun celebration  
-            for (let i = 0; i < 15; i++) {  
-                setTimeout(() => createEmojiRain(), i * 100);  
-            }  
+            showAchievement('📸', 'Take a screenshot to share!');  
+            for (let i = 0; i < 15; i++) setTimeout(() => createEmojiRain(), i * 100);  
         }
 
         createGrid();
 
-        // ==================== JOKES ====================  
-        const jokes = [  
-            { q: "Why did the Creeper cross the road? 🤔", a: "To get to the other SSSSSide! 💥😂" },  
-            { q: "What's a Minecraft player's favorite music? 🎵", a: "Block and Roll! 🎸🤣" },  
-            { q: "Why don't Endermen ever win at hide and seek? 👀", a: "Because they always TELEPORT when you look at them! 😂" },  
-            { q: "What did Steve say to the diamond ore? 💎", a: "'I DIG you!' ⛏️😄" },  
-            { q: "Why was the Minecraft world so flat? 🌍", a: "Because it had no DEPTH! 🤣" },  
-            { q: "What do you call a pig struck by lightning? ⚡🐷", a: "A Zombified Piglin with a BAD day! 😂" },  
-            { q: "Why don't skeletons fight each other? 💀", a: "They don't have the GUTS! 🤣" },  
-            { q: "What's a Ghast's favorite country? 👻", a: "The NETHER-lands! 😂🇳🇱" }  
-        ];  
-        let currentJoke = 0;  
-        let jokeRevealed = false;
-
-        function showNextJoke() {  
-            const q = document.getElementById('jokeQuestion');  
-            const a = document.getElementById('jokeAnswer');  
-            const hint = document.getElementById('jokeHint');
-
-            if (!jokeRevealed) {  
-                a.classList.add('revealed');  
-                hint.textContent = '👆 Click for the next joke!';  
-                jokeRevealed = true;  
-            } else {  
-                currentJoke = (currentJoke + 1) % jokes.length;  
-                q.textContent = jokes[currentJoke].q;  
-                a.textContent = jokes[currentJoke].a;  
-                a.classList.remove('revealed');  
-                hint.textContent = '👆 Click to reveal the answer!';  
-                jokeRevealed = false;  
-            }  
-        }
-
         // ==================== QUIZ ====================  
         const quizQuestions = [  
-            {  
-                q: "What's the BEST tool for mining stone? ⛏️",  
-                options: ["Sword ⚔️", "Pickaxe ⛏️", "Shovel 🪏", "Your fists 👊"],  
-                correct: 1  
-            },  
-            {  
-                q: "How tall should walls be for a good house? 🧱",  
-                options: ["1 block 😂", "4-5 blocks 👍", "100 blocks 😵", "2 blocks 🤔"],  
-                correct: 1  
-            },  
-            {  
-                q: "What do you need to make glass? 🪟",  
-                options: ["Diamond + Water 💎", "Sand + Furnace 🔥", "Wood + Magic ✨", "Stone + Love ❤️"],  
-                correct: 1  
-            },  
-            {  
-                q: "What mob is scared of cats? 🐱",  
-                options: ["Zombie 🧟", "Spider 🕷️", "Creeper 💚", "Enderman 👾"],  
-                correct: 2  
-            },  
-            {  
-                q: "What sets your spawn point? 🏠",  
-                options: ["Crafting Table 🔨", "Furnace 🔥", "Bed 🛏️", "Chest 📦"],  
-                correct: 2  
-            },  
-            {  
-                q: "Why do you need torches in your house? 💡",  
-                options: ["They look pretty ✨", "Stop mobs from spawning 🚫👾", "Heat your food 🍖", "Make rainbows 🌈"],  
-                correct: 1  
-            },  
-            {  
-                q: "What makes a Creeper explode? 💥",  
-                options: ["Water 💧", "Getting close to you 😱", "Sunlight ☀️", "Dancing 💃"],  
-                correct: 1  
-            },  
-            {  
-                q: "How many wood planks make a door? 🚪",  
-                options: ["2 planks", "4 planks", "6 planks", "8 planks"],  
-                correct: 2  
-            }  
+            { q: "What's the BEST tool for mining stone? ⛏️", options: ["Sword ⚔️", "Pickaxe ⛏️", "Shovel 🪏", "Your fists 👊"], correct: 1 },  
+            { q: "How tall should walls be for a good house? 🧱", options: ["1 block 😂", "4-5 blocks 👍", "100 blocks 😵", "2 blocks 🤔"], correct: 1 },  
+            { q: "What do you need to make glass? 🪟", options: ["Diamond + Water 💎", "Sand + Furnace 🔥", "Wood + Magic ✨", "Stone + Love ❤️"], correct: 1 },  
+            { q: "What mob is scared of cats? 🐱", options: ["Zombie 🧟", "Spider 🕷️", "Creeper 💚", "Enderman 👾"], correct: 2 },  
+            { q: "What sets your spawn point? 🏠", options: ["Crafting Table 🔨", "Furnace 🔥", "Bed 🛏️", "Chest 📦"], correct: 2 },  
+            { q: "Why do you need torches in your house? 💡", options: ["They look pretty ✨", "Stop mobs from spawning 🚫👾", "Heat your food 🍖", "Make rainbows 🌈"], correct: 1 },  
+            { q: "What makes a Creeper explode? 💥", options: ["Water 💧", "Getting close to you 😱", "Sunlight ☀️", "Dancing 💃"], correct: 1 },  
+            { q: "How many wood planks make a door? 🚪", options: ["2 planks", "4 planks", "6 planks", "8 planks"], correct: 2 }  
         ];
 
-        let currentQuizQ = 0;  
-        let quizScore = 0;  
-        let quizAnswered = false;
+        let currentQuizQ = 0, quizScore = 0, quizAnswered = false;
 
         function loadQuestion() {  
-            if (currentQuizQ >= quizQuestions.length) {  
-                showQuizResult();  
-                return;  
-            }
-
+            if (currentQuizQ >= quizQuestions.length) { showQuizResult(); return; }  
             const q = quizQuestions[currentQuizQ];  
             document.getElementById('quizQuestion').textContent = q.q;  
             document.getElementById('quizScore').textContent = `Score: ${quizScore} / ${currentQuizQ} | Question ${currentQuizQ + 1} of ${quizQuestions.length}`;  
-              
             const optionsDiv = document.getElementById('quizOptions');  
             optionsDiv.innerHTML = '';  
-              
             q.options.forEach((opt, idx) => {  
                 const btn = document.createElement('button');  
                 btn.className = 'quiz-option';  
                 btn.textContent = opt;  
                 btn.onclick = () => answerQuestion(idx, btn);  
                 optionsDiv.appendChild(btn);  
-            });
-
+            });  
             document.getElementById('nextBtn').style.display = 'none';  
             document.getElementById('resetBtn').style.display = 'none';  
             document.getElementById('quizResult').style.display = 'none';  
@@ -2150,91 +2643,42 @@
 
         function answerQuestion(idx, btn) {  
             if (quizAnswered) return;  
-            quizAnswered = true;
-
+            quizAnswered = true;  
             const correct = quizQuestions[currentQuizQ].correct;  
-            const options = document.querySelectorAll('.quiz-option');
-
-            if (idx === correct) {  
-                btn.classList.add('correct');  
-                quizScore++;  
-                showAchievement('✅', 'Correct! You\'re a genius! 🧠');  
-            } else {  
-                btn.classList.add('wrong');  
-                options[correct].classList.add('correct');  
-                showAchievement('❌', 'Oops! But now you know! 📚');  
-            }
-
+            const options = document.querySelectorAll('.quiz-option');  
+            if (idx === correct) { btn.classList.add('correct'); quizScore++; showAchievement('✅', 'Correct! You\'re a genius! 🧠'); }  
+            else { btn.classList.add('wrong'); options[correct].classList.add('correct'); showAchievement('❌', 'Oops! But now you know! 📚'); }  
             document.getElementById('quizScore').textContent = `Score: ${quizScore} / ${currentQuizQ + 1}`;  
-              
-            if (currentQuizQ < quizQuestions.length - 1) {  
-                document.getElementById('nextBtn').style.display = 'inline-block';  
-            } else {  
-                document.getElementById('nextBtn').style.display = 'inline-block';  
-                document.getElementById('nextBtn').textContent = 'SEE RESULTS 🏆';  
-            }  
+            document.getElementById('nextBtn').style.display = 'inline-block';  
+            if (currentQuizQ >= quizQuestions.length - 1) document.getElementById('nextBtn').textContent = 'SEE RESULTS 🏆';  
         }
 
-        function nextQuestion() {  
-            currentQuizQ++;  
-            if (currentQuizQ >= quizQuestions.length) {  
-                showQuizResult();  
-            } else {  
-                loadQuestion();  
-            }  
-        }
+        function nextQuestion() { currentQuizQ++; if (currentQuizQ >= quizQuestions.length) showQuizResult(); else loadQuestion(); }
 
         function showQuizResult() {  
             const percent = Math.round((quizScore / quizQuestions.length) * 100);  
             const resultDiv = document.getElementById('quizResult');  
-              
             let message, color;  
-            if (percent === 100) {  
-                message = '🏆 PERFECT SCORE! You\'re a Minecraft LEGEND! 🏆';  
-                color = '#FFD700';  
-                for (let i = 0; i < 30; i++) setTimeout(() => createEmojiRain(), i * 100);  
-            } else if (percent >= 75) {  
-                message = '⭐ AWESOME! You really know your blocks! ⭐';  
-                color = '#00CC00';  
-            } else if (percent >= 50) {  
-                message = '👍 Not bad! Keep playing and learning! 👍';  
-                color = '#00CED1';  
-            } else {  
-                message = '📚 Keep exploring! You\'ll be a pro in no time! 📚';  
-                color = '#FF8C00';  
-            }
-
-            resultDiv.style.display = 'block';  
-            resultDiv.style.color = color;  
-            resultDiv.style.background = '#f0f0f0';  
-            resultDiv.style.border = `3px solid ${color}`;  
-            resultDiv.style.padding = '20px';  
-            resultDiv.innerHTML = `  
-                <div style="font-size: 2rem; margin-bottom: 10px;">${percent === 100 ? '🎉🏆🎉' : '📊'}</div>  
-                <div>${message}</div>  
-                <div style="margin-top: 10px; font-size: 1.2rem;">${quizScore} / ${quizQuestions.length} correct (${percent}%)</div>  
-            `;
-
+            if (percent === 100) { message = '🏆 PERFECT! You\'re a Minecraft LEGEND! 🏆'; color = '#FFD700'; for (let i = 0; i < 30; i++) setTimeout(() => createEmojiRain(), i * 100); }  
+            else if (percent >= 75) { message = '⭐ AWESOME! You know your blocks! ⭐'; color = '#00CC00'; }  
+            else if (percent >= 50) { message = '👍 Not bad! Keep learning! 👍'; color = '#00CED1'; }  
+            else { message = '📚 Keep exploring! You\'ll be a pro soon! 📚'; color = '#FF8C00'; }  
+            resultDiv.style.display = 'block'; resultDiv.style.color = color; resultDiv.style.background = '#f0f0f0';  
+            resultDiv.style.border = `3px solid ${color}`; resultDiv.style.padding = '20px';  
+            resultDiv.innerHTML = `<div style="font-size:2rem;margin-bottom:10px;">${percent===100?'🎉🏆🎉':'📊'}</div><div>${message}</div><div style="margin-top:10px;font-size:1.2rem;">${quizScore}/${quizQuestions.length} correct (${percent}%)</div>`;  
             document.getElementById('quizQuestion').textContent = 'Quiz Complete!';  
             document.getElementById('quizOptions').innerHTML = '';  
             document.getElementById('nextBtn').style.display = 'none';  
             document.getElementById('resetBtn').style.display = 'inline-block';  
-            document.getElementById('quizScore').textContent = `Final Score: ${quizScore} / ${quizQuestions.length}`;  
         }
 
-        function resetQuiz() {  
-            currentQuizQ = 0;  
-            quizScore = 0;  
-            loadQuestion();  
-        }
-
+        function resetQuiz() { currentQuizQ = 0; quizScore = 0; loadQuestion(); }  
         loadQuestion();
 
-        // ==================== FLOATING PARTICLES ====================  
+        // ==================== PARTICLES ====================  
         function createParticles() {  
             const container = document.getElementById('particles');  
             const colors = ['#5D8C00', '#8B6914', '#888', '#A0522D', '#FFD700'];  
-              
             for (let i = 0; i < 15; i++) {  
                 const particle = document.createElement('div');  
                 particle.className = 'particle';  
@@ -2249,21 +2693,14 @@
         }  
         createParticles();
 
-        // ==================== SCROLL TO TOP ====================  
+        // ==================== SCROLL / NAV ====================  
         window.addEventListener('scroll', () => {  
             const btn = document.getElementById('scrollTop');  
-            if (window.scrollY > 500) {  
-                btn.classList.add('visible');  
-            } else {  
-                btn.classList.remove('visible');  
-            }  
+            btn.classList.toggle('visible', window.scrollY > 500);  
         });
 
-        function scrollToTop() {  
-            window.scrollTo({ top: 0, behavior: 'smooth' });  
-        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-        // ==================== DAY/NIGHT TOGGLE ====================  
         let isNight = false;  
         function toggleDayNight() {  
             isNight = !isNight;  
@@ -2272,45 +2709,24 @@
             showAchievement(isNight ? '🌙' : '☀️', isNight ? 'Night mode! Watch for mobs!' : 'Day mode! Safe to build!');  
         }
 
-        // ==================== SMOOTH SCROLL ====================  
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {  
             anchor.addEventListener('click', function(e) {  
                 e.preventDefault();  
                 const target = document.querySelector(this.getAttribute('href'));  
-                if (target) {  
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });  
-                }  
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });  
             });  
         });
 
-        // ==================== SCROLL ANIMATIONS ====================  
-        const observer = new IntersectionObserver((entries) => {  
-            entries.forEach(entry => {  
-                if (entry.isIntersecting) {  
-                    entry.target.querySelectorAll('.step').forEach((step, i) => {  
-                        step.style.animationDelay = (i * 0.1) + 's';  
-                        step.style.animationPlayState = 'running';  
-                    });  
-                }  
-            });  
-        }, { threshold: 0.1 });
-
-        const stepContainer = document.querySelector('.step-container');  
-        if (stepContainer) observer.observe(stepContainer);
-
-        // Scroll achievement  
         let scrollAchieved = false;  
         window.addEventListener('scroll', () => {  
-            if (!scrollAchieved && window.scrollY > 200) {  
-                showAchievement('📜', 'Explorer! You started scrolling!');  
-                scrollAchieved = true;  
-            }  
+            if (!scrollAchieved && window.scrollY > 200) { showAchievement('📜', 'Explorer! You started scrolling!'); scrollAchieved = true; }  
         });
 
-        // Console Easter Egg  
+        // ==================== INITIALIZE DAILY JOKE ====================  
+        loadDailyJoke();
+
         console.log('%c⛏️ MINECRAFT MASTER BUILDER ⛏️', 'font-size: 20px; color: #5D8C00; font-weight: bold;');  
-        console.log('%cYou found the secret console message! 🎮', 'font-size: 14px; color: #00CED1;');  
-        console.log('%c+10 Builder Points! 🏆', 'font-size: 14px; color: #FFD700;');  
+        console.log(`%c📅 Today's joke #${getDayOfYear()} of 365!`, 'font-size: 14px; color: #00CED1;');  
     </script>
 
 </body>  
